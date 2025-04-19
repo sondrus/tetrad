@@ -1,0 +1,140 @@
+/* color palette */
+:root {
+	--tetrad-panel: #f1efee;
+	--tetrad-white: #ffffff;
+	--tetrad-black: #181818;
+
+	--tetrad-dimgray: #464646;
+	--tetrad-gray: #868482;
+	--tetrad-silver: #bbbbbb;
+	--tetrad-silver-extra: #d5d5d5;
+	--tetrad-silver-mute: #e5e5e5;
+
+	--tetrad-warning: #a87311;
+	--tetrad-error: #ad0e0e;
+	--tetrad-error-light: #ebd7d9;
+
+	--tetrad-ui-lightblue: #dbf1ff;
+	--tetrad-ui-blue: #99d1ff;
+
+	--tetrad-highlight: #0078d7;
+
+	--tetrad-input-active: #a87311;
+
+	--tetrad-block-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	--tetrad-shadow-inner: 0 0 5px rgba(0, 0, 0, 0.5) inset;
+}
+
+/* semantic color variables */
+:root {
+	--color-panel-bg: var(--tetrad-panel);
+	--color-panel-bg-white: var(--tetrad-white);
+	--color-panel-bg-light: var(--tetrad-silver-mute);
+	--color-panel-bg-dark: var(--tetrad-silver);
+	--color-panel-error: var(--tetrad-error-light);
+	--color-panel-border: var(--tetrad-gray);
+	--color-panel-border-hover: var(--tetrad-dimgray);
+
+	--color-text-white: var(--tetrad-white);
+	--color-text-silver: var(--tetrad-silver);
+	--color-text-gray: var(--tetrad-dimgray);
+	--color-text-black: var(--tetrad-black);
+
+	--color-title: var(--tetrad-silver-mute);
+
+	--color-input-bg: var(--tetrad-white);
+
+	--color-btn-bg: var(--tetrad-silver-mute);
+	--color-btn-bg-active: var(--tetrad-silver);
+	--color-btn-border: var(--tetrad-gray);
+	--color-btn-border-hover: var(--tetrad-dimgray);
+	--color-btn-shadow-inner: var(--tetrad-shadow-inner);
+
+	--color-special-btn-bg: var(--tetrad-ui-lightblue);
+	--color-special-btn-border: var(--tetrad-ui-blue);
+
+	--color-menuitem-highlight: var(--tetrad-highlight);
+	--color-menuitem-hover-bg: var(--tetrad-silver-mute);
+	--color-menuitem-hover-color: var(--tetrad-highlight);
+
+	--color-a: #2675d7;
+
+	--color-text-info: var(--tetrad-dimgray);
+	--color-text-warning: var(--tetrad-warning);
+	--color-text-error: var(--tetrad-error);
+}
+
+/*
+@media (prefers-color-scheme: dark) {
+	:root {}
+}
+*/
+
+/* semantic dimension variables */
+:root {
+	--tetrad-height-header: 32px;
+	--tetrad-height-footer: 16px;
+	--tetrad-height-icons-m: 20px;
+	--tetrad-height-icons-s: 16px;
+
+	--tetrad-icons-margin: 8px;
+
+	--tetrad-minwidth-aside: 150px;
+
+	--tetrad-content-padding: 20px;
+	--tetrad-popup-padding: 10px;
+
+	--tetrad-focus-outline: 0px solid rgb(233, 178, 77);
+
+	--tetrad-border-radius: 3px;
+
+	--tetrad-input-height: 32px;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+	outline: 0;
+}
+
+*:focus {
+	outline: var(--tetrad-focus-outline);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+html, body {
+	overscroll-behavior-y: contain; /* Mobile: disable refresh page on swipe from top edge */
+}
+
+html {
+	background: var(--color-background);
+	height: calc(var(--vh, 1vh) * 100);
+	text-rendering: optimizeLegibility;
+	user-select: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	background: var(--color-background);
+	height: 100%;
+}
+
+#tetrad {
+	height: 100%;
+}
+
+@media (max-width: 767px) {
+	:root {
+		--tetrad-height-header: 28px;
+		--tetrad-height-footer: 13px;
+		--tetrad-height-icons: 20px;
+		--tetrad-icons-margin: 4px;
+		--tetrad-content-padding: 10px;
+	}
+}

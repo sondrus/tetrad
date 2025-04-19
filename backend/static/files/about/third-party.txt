@@ -1,0 +1,21 @@
+Third-Party Libraries and Licenses:
+
+* Go (https://github.com/golang/go): BSD-3-Clause License (https://opensource.org/licenses/BSD-3-Clause)
+
+* gorilla/mux (https://github.com/gorilla/mux): BSD-3-Clause License (https://opensource.org/licenses/BSD-3-Clause)
+
+* gorm+sqlite (https://github.com/go-gorm/sqlite): MIT License (https://opensource.org/licenses/MIT)
+
+* TypeScript (https://github.com/microsoft/TypeScript): Apache-2.0 License (https://opensource.org/licenses/Apache-2.0)
+
+* vue (https://github.com/vuejs/vue): MIT License (https://opensource.org/licenses/MIT)
+
+* vue-i18n (https://github.com/intlify/vue-i18n): MIT License (https://opensource.org/licenses/MIT)
+
+* pinia (https://github.com/vuejs/pinia): MIT License (https://opensource.org/licenses/MIT)
+
+* CodeMirror (https://github.com/codemirror/dev): MIT License (https://opensource.org/licenses/MIT)
+
+* markdown-it (https://github.com/markdown-it/markdown-it): MIT License (https://opensource.org/licenses/MIT)
+
+* highlight.js (https://github.com/highlightjs/highlight.js): BSD-3-Clause license (https://opensource.org/licenses/BSD-3-Clause)
