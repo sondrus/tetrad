@@ -19,6 +19,7 @@ import { html } from "@codemirror/lang-html";
 import { css } from "@codemirror/lang-css";
 import { javascript } from "@codemirror/lang-javascript";
 
+
 type refContents = {value: string}
 
 let editor: EditorView;
@@ -147,7 +148,20 @@ const editorSetFocus = (delay: number = 10) => {
 	}, delay)
 }
 
+// Insert text at cursor
+const insertAtCursor = (text: string) => {
+	if (!editor) {
+    return;
+  }
+
+  editor.dispatch(editor.state.update(editor.state.replaceSelection(text), {
+    scrollIntoView: true,
+    userEvent: "input"
+  }));
+};
+
+
 // Is focused?
 const editorIsFocused = () => isFocused
 
-export { editorCreate, editorSetContent, editorSetLineWrap, editorSetFocus, editorIsFocused }
+export { editorCreate, editorSetContent, editorSetLineWrap, editorSetFocus, editorIsFocused, insertAtCursor }
