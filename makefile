@@ -30,7 +30,7 @@ release: front
 	@cd $(BACKEND_DIR) && test -f $(BUILD_DIR)$(APP).release && rm $(BUILD_DIR)$(APP).release
 	cd $(BACKEND_DIR) && go build -ldflags="-s -w" -o $(BUILD_DIR)$(APP).release main.go
 	cd $(BACKEND_DIR) && upx -q -q -q --best --lzma $(BUILD_DIR)$(APP).release
-	cd $(BACKEND_DIR) && $(BUILD_DIR)$(APP).release --host 0.0.0.0 --port 8888 --database ../demo.db
+	cd $(BACKEND_DIR) && $(BUILD_DIR)$(APP).release
 
 front:
 	@cd $(FRONTEND_DIR) && find src public index.html package.json vite.config.ts -type f -print0 | sort -z | xargs -0 sha1sum > .build.hash
