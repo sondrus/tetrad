@@ -6,21 +6,27 @@
         <ul>
 
           <li>
-            <button
-              @click="actionsStore.note.addRoot"
-            >{{$t('menu.add_root')}}</button>
-          </li>
+            <div class="block">
+              <div class="block_inner">
 
-          <li v-if="notesStore.isNoteOpened">
-            <button
-              @click="actionsStore.note.addNear"
-            >{{$t('menu.add_near')}}</button>
-          </li>
+                <button
+                  @click="actionsStore.note.addRoot"
+                >{{$t('menu.add_root')}}</button>
 
-          <li v-if="notesStore.isNoteOpened">
-            <button
-              @click="actionsStore.note.addChild"
-            >{{$t('menu.add_child')}}</button>
+                <hr/>
+
+                <button
+                  @click="actionsStore.note.addNear"
+                >{{$t('menu.add_near')}}</button>
+
+                <hr/>
+
+                <button
+                  @click="actionsStore.note.addChild"
+                >{{$t('menu.add_child')}}</button>
+
+              </div>
+            </div>
           </li>
 
           <li></li>
@@ -62,7 +68,7 @@
                   <button class="btn_collapse_all"
                     @click="actionsStore.treeview.collapseAll"
                   >{{$t('menu.collapse_all')}}</button>
-                  
+
                 </div>
               </div>
             </li>
