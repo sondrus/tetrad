@@ -122,15 +122,16 @@ func iframeHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Prepare HTML
-	html := fmt.Sprintf(`<div class="iframe_contents">%s</div>`, note.Contents)
-	js := `<script src="script.js"></script>`
+	html := note.Contents
 
-	// Inject JS to HTML (just one match)
+	// Prepare HTML
 	if !strings.HasPrefix(strings.ToUpper(note.Contents), "<!DOCTYPE") {
+		html = fmt.Sprintf(`<div class="iframe_contents">%s</div>`, html)
 		html = fmt.Sprintf(`<!DOCTYPE html>`+
-			`<html>`+
+			`<html lang="en">`+
 			`<head>`+
 			`<meta charset="UTF-8">`+
+			`<link rel="icon" href="data:,">`+
 			`<style>html,body{margin:0;padding:0;}</style>`+
 			`</head>`+
 			`<body>%s</body>`+
@@ -138,6 +139,7 @@ func iframeHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Inject JS to HTML <head> (just one match)
+	js := `<script src="script.js"></script>`
 	re := regexp.MustCompile(`(?i)` + regexp.QuoteMeta("<head>"))
 	found := false
 	html = re.ReplaceAllStringFunc(html, func(match string) string {
