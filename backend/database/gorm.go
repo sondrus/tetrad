@@ -144,7 +144,9 @@ func initSqleanDriver() string {
 	// Register sqlite3 driver with sqlean unicode extension
 	driver := "sqlite3_unicode"
 	sql.Register(driver, &sqlite3.SQLiteDriver{
-		Extensions: []string{libfileTmp},
+		ConnectHook: func(conn *sqlite3.SQLiteConn) error {
+			return conn.LoadExtension(libfileTmp, "sqlite3_unicode_init")
+		},
 	})
 
 	return driver
@@ -158,7 +160,7 @@ func getLibFilename() (string, string, error) {
 	case "linux":
 		switch runtime.GOARCH {
 		case "amd64":
-			return fmt.Sprintf("%s-linux-386", prefix), "so", nil
+			return fmt.Sprintf("%s-linux-amd64", prefix), "so", nil
 		case "386":
 			return fmt.Sprintf("%s-linux-386", prefix), "so", nil
 		case "arm64":
