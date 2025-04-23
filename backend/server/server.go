@@ -126,13 +126,13 @@ func iframeHandler(w http.ResponseWriter, r *http.Request) {
 
 	// Prepare HTML
 	if !strings.HasPrefix(strings.ToUpper(note.Contents), "<!DOCTYPE") {
-		html = fmt.Sprintf(`<div class="iframe_contents">%s</div>`, html)
+		html = fmt.Sprintf(`<div id="__iframe__">%s</div>`, html)
 		html = fmt.Sprintf(`<!DOCTYPE html>`+
 			`<html lang="en">`+
 			`<head>`+
 			`<meta charset="UTF-8">`+
 			`<link rel="icon" href="data:,">`+
-			`<style>html,body{margin:0;padding:0;}</style>`+
+			`<style>html,body,#__iframe__{height:100%%;margin:0;padding:0;}</style>`+
 			`</head>`+
 			`<body>%s</body>`+
 			`</html>`, html)
