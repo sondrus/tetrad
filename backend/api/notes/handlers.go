@@ -86,13 +86,18 @@ func SearchNotesHandler(w http.ResponseWriter, r *http.Request) {
 	var whereConditions []string
 	var args []any
 	for _, word := range words {
-		escaped := "%" + word + "%"
 		if req.Title {
-			whereConditions = append(whereConditions, "TITLE LIKE ?")
-			args = append(args, escaped)
+			whereConditions = append(whereConditions, "custom_like(TITLE, ?)")
+			args = append(args, word)
 		} else {
-			whereConditions = append(whereConditions, "(TITLE LIKE ? OR CONTENTS LIKE ? OR URL LIKE ?)")
-			args = append(args, escaped, escaped, escaped)
+			whereConditions = append(whereConditions,
+				"("+
+					"custom_like(TITLE, ?) OR "+
+					"custom_like(CONTENTS, ?) OR "+
+					"(URL IS NOT NULL AND custom_like(URL, ?))"+
+					")",
+			)
+			args = append(args, word, word, word)
 		}
 	}
 	whereClause := strings.Join(whereConditions, " AND ")
