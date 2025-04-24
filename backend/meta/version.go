@@ -6,7 +6,7 @@ import "fmt"
 var Name = "Tetrad"
 
 // Version - Application version
-var Version = "1.0.0"
+var Version = "1.1.0"
 
 // Server - value for `server` header in response
 var Server = fmt.Sprintf("%s/%s", Name, Version)
