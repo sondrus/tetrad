@@ -1,4 +1,4 @@
-import { EditorState, Compartment } from "@codemirror/state";
+import { EditorState, Compartment, EditorSelection } from "@codemirror/state";
 import {
 	EditorView, keymap, highlightSpecialChars, drawSelection, highlightActiveLineGutter,
 	dropCursor, rectangularSelection, crosshairCursor, lineNumbers, highlightActiveLine,
@@ -23,6 +23,8 @@ import { javascript } from "@codemirror/lang-javascript";
 type refContents = {value: string}
 
 let editor: EditorView;
+
+let lastNoteId = 0;
 
 let isFocused = false;
 
@@ -105,25 +107,35 @@ const createUpdateListener = (callback: () => refContents) => {
 }
 
 // Set custom contents for editor
-const editorSetContent = (newText: string) => {
+const editorSetContent = (newText: string, noteId: number = 0) => {
 	if (!editor) {
 		return
 	}
 
 	isInitializing = true;
 
+  // Set new content
 	editor.dispatch(editor.state.update({
 		changes: { from: 0, to: editor.state.doc.length, insert: newText }
 	}));
 
-	isInitializing = false
+  // Set cursor pos (especially relevant for editing)
+  const cursorPos = noteId === lastNoteId ? editor.state.selection.main.head : 0
+	editor.dispatch(editor.state.update({
+    selection: EditorSelection.cursor(cursorPos)
+	}));
 
+  // Clear undo history
 	editor.dispatch({
 		effects: undoRedo.reconfigure([])
 	});
 	editor.dispatch({
 		effects: undoRedo.reconfigure([history()])
 	});
+
+	isInitializing = false
+
+  lastNoteId = noteId
 };
 
 // Set line wrap

@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
 
-import { editorCreate, editorSetContent, editorSetLineWrap, editorSetFocus, editorIsFocused } from '@/services/editor'
+import { editorCreate, editorSetContent, editorSetLineWrap, editorSetFocus } from '@/services/editor'
 import { useSettingsStore } from '@/stores/settingsStore';
 import { useNotesStore } from '@/stores/notesStore';
 
@@ -33,11 +33,11 @@ watch(() => editorContents.value, (contents) => {
     if (!notesStore.current) {
       return;
     }
-  
+
     if (notesStore.current.readonly) {
       return;
     }
-  
+
     // Save note contents
     notesStore.updateNoteContents(contents);
     notesStore.saveNoteContentsWithDebounce(notesStore.current.id, contents);
@@ -45,10 +45,7 @@ watch(() => editorContents.value, (contents) => {
 
 // Auto load editor text from current note
 watch(() => notesStore.current.contents, (contents) => {
-  if (editorIsFocused()){
-    return
-  }
-  editorSetContent(contents);
+  editorSetContent(contents, notesStore.current.id);
 });
 
 // Auto apply options `linewrap`
