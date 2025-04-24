@@ -114,24 +114,28 @@ const editorSetContent = (newText: string, noteId: number = 0) => {
 
 	isInitializing = true;
 
-  // Set new content
-	editor.dispatch(editor.state.update({
-		changes: { from: 0, to: editor.state.doc.length, insert: newText }
-	}));
-
-  // Set cursor pos (especially relevant for editing)
+  // Get cursor pos
   const cursorPos = noteId === lastNoteId ? editor.state.selection.main.head : 0
+
+  // Set new content and cursor pos
 	editor.dispatch(editor.state.update({
-    selection: EditorSelection.cursor(cursorPos)
+    // Set new content
+		changes: { from: 0, to: editor.state.doc.length, insert: newText },
+
+   // Set cursor pos (especially relevant for editing)
+    selection: EditorSelection.cursor(cursorPos),
+    scrollIntoView: true
 	}));
 
   // Clear undo history
-	editor.dispatch({
-		effects: undoRedo.reconfigure([])
-	});
-	editor.dispatch({
-		effects: undoRedo.reconfigure([history()])
-	});
+  if(noteId !== lastNoteId) {
+    editor.dispatch({
+      effects: undoRedo.reconfigure([])
+    });
+    editor.dispatch({
+      effects: undoRedo.reconfigure([history()])
+    });
+  }
 
 	isInitializing = false
 
