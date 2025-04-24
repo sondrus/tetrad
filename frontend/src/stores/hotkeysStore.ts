@@ -26,13 +26,13 @@ export const useHotkeysStore = defineStore('hokey', () => {
 			go_end:
 				['Ctrl+Alt+ArrowDown', actions.treeview.goEnd],
 			go_up:
-				['Ctrl+ArrowUp', actions.treeview.goUp],
+				['Alt+ArrowUp', actions.treeview.goUp],
 			go_down:
-				['Ctrl+ArrowDown', actions.treeview.goDown],
+				['Alt+ArrowDown', actions.treeview.goDown],
 			go_parent:
-				['Ctrl+ArrowLeft', actions.treeview.goParent],
+				['Alt+ArrowLeft', actions.treeview.goParent],
 			go_child:
-				['Ctrl+ArrowRight', actions.treeview.goChild],
+				['Alt+ArrowRight', actions.treeview.goChild],
 		},
 		note: {
 			add_root:
@@ -73,6 +73,8 @@ export const useHotkeysStore = defineStore('hokey', () => {
 				['Ctrl+Alt+T', actions.search.searchInTitles],
 			whole:
 				['Ctrl+Alt+W', actions.search.searchWholePhrase],
+			tree_mode:
+				['Ctrl+Alt+Y', actions.search.searchTreeMode],
 		},
 		database: {
 			vacuum:
