@@ -57,7 +57,10 @@ const popupButtons = [
   {
     lang: 'btn_ok',
     icon: 'check',
-    onClick: () => emojiStore.closeDialog(),
+    onClick: () => {
+      emojiStore.emoji = emojiSelected.value?.value ?? '';
+      emojiStore.closeDialog()
+    }
   },
   {
     lang: 'btn_cancel',
@@ -78,7 +81,6 @@ watch(() => emojiStore.isOpen, (isOpen) => {
     }
     // Close
     else if (!isOpen && refDialog.value.open) {
-      emojiStore.emoji = emojiSelected.value?.value ?? ''
       refDialog.value.close()
     }
   },
