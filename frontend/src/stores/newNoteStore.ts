@@ -13,7 +13,7 @@ export const useNewNoteStore = defineStore('new_note', () => {
 
 	// Auto open <dialog> if true (and auto close if false)
 	const isOpen = ref<boolean>(false)
-	
+
 	// `isOpen` for another dialog
 	const isOpenSelectParent = ref<boolean>(false)
 
@@ -41,6 +41,13 @@ export const useNewNoteStore = defineStore('new_note', () => {
 	// Wrapper for `showDialog`: show dialog for add new note
 	const showDialogAdd = (type: boolean | undefined = undefined) => {
 		targetType.value = type;
+
+    // Inherit some properties for new note by default
+    const parentNote = notesStore.notesMap.get(notesStore.current.id)
+    if(parentNote){
+      const { icon, type, syntax } = parentNote;
+      Object.assign(noteData.value, { icon, type, syntax });
+    }
 
 		showDialog();
 	};

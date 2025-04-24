@@ -13,7 +13,7 @@
         <PopupHeader :title="popupTitle" />
 
         <div class="contents">
-            
+
           <div class="field field_title">
 
             <!--
@@ -153,7 +153,7 @@ const parentIcon = computed(() => {
   if(note.icon){
     return `icon-${note.icon}`;
   }
-  
+
   const left = note.left ?? 0
   const right = note.right ?? 0
   if(right - left <= 1){
@@ -253,17 +253,17 @@ dialog {
 .field_title {
   display: flex;
 }
+
 .field_title > button {
   flex: 0 0 32px;
   height: 32px;
   width: 32px;
 }
-/* .field_title > button.noteicon {
-	background-size: var(--tetrad-height-icons-s);
-} */
+
 .field_title > button.readonly {
 	background-size: var(--tetrad-height-icons-m);
 }
+
 .field_title > input[type=text] {
   flex: 1 1 auto;
   margin-right: 10px;
@@ -274,6 +274,7 @@ dialog {
   display: flex;
   width: 100%;
 }
+
 .field_parent button span {
   flex: 0 0 auto;
   overflow: hidden;
@@ -281,9 +282,11 @@ dialog {
   text-align: left;
   white-space: nowrap;
 }
+
 .field_parent button span + span:not(:empty) {
   margin-left: 8px;
 }
+
 .field_parent button span.title {
   flex: 0 1 100%;
   text-overflow: ellipsis;
@@ -293,10 +296,12 @@ dialog {
   display: flex;
   width: 100%;
 }
+
 .field_type select {
   flex: 1 1 180px;
   width: 100%;
 }
+
 .field_type select + * {
   flex: 1 1 auto;
   margin-left: 10px;
