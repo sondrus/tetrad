@@ -201,6 +201,9 @@ dialog>.inner>.controls .extra input[type=text] {
   width: 100%;
 }
 
+dialog>.inner>.controls .buttons {
+  white-space: nowrap;
+}
 dialog>.inner>.controls button {
 	cursor: pointer;
 	min-width: 100px;
