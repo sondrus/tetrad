@@ -16,4 +16,9 @@ app.use(createPinia())
 
 app.use(i18n);
 
-app.mount('#tetrad')
+app.mount('#tetrad');
+
+// For debug in production
+(window as { tetrad?: typeof app }).tetrad = app
+
+
