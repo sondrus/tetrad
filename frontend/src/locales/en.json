@@ -33,6 +33,7 @@
 	"menu.pre_wrap": "Viewer wrap code",
 	"menu.line_wrap": "Editor wrap lines",
 	"menu.reverse_mobile_interface": "Reverse mobile interface",
+	"menu.emoji": "Choose emoji",
 	"menu.log": "Open message log",
 	"menu.welcome": "Go to welcome page",
 	"menu.about": "About Tetrad",
@@ -51,6 +52,7 @@
 	"search.clear": "Clear search",
 	"search.just_in_titles": "Search just in titles",
 	"search.whole_phrases": "Search whole phrases",
+	"search.tree_mode": "Tree mode when searching",
 
 	"clipboard.copy": "copy",
 	"clipboard.success": "copied!",
@@ -77,8 +79,18 @@
 	
 	"popup_license.header": "License text",
 
+	"popup_emoji.header": "Choose emoji",
+
 	"btn_ok": "OK",
 	"btn_cancel": "Cancel",
+
+	"emoji.symbols": "✅ Symbols",
+	"emoji.objects": "📌 Objects",
+	"emoji.time_weather": "🕐 Weather & Time",
+	"emoji.activities": "🎯 Activities",
+	"emoji.clothing_accessories": "🧥 Clothing & Accessories",
+	"emoji.travel_places": "🚀 Travel & Places",
+	"emoji.flags": "🚩 Flags",
 
 	"error.loading": "Unable to load notes. Make sure the app is running."
 }

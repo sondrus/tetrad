@@ -5,12 +5,17 @@
 <script setup lang="ts">
 import { onMounted, ref, watch } from "vue";
 
-import { editorCreate, editorSetContent, editorSetLineWrap, editorSetFocus } from '@/services/editor'
+import {
+  editorCreate, editorSetContent, editorSetLineWrap, editorSetFocus,
+  editorInsertAtCursor
+} from '@/services/editor'
 import { useSettingsStore } from '@/stores/settingsStore';
 import { useNotesStore } from '@/stores/notesStore';
+import { useEmojiStore } from '@/stores/emojiStore';
 
 const settingsStore = useSettingsStore();
 const notesStore = useNotesStore();
+const emojiStore = useEmojiStore();
 
 const editorContainer = ref<HTMLElement>();
 const editorContents = ref<string>()
@@ -58,6 +63,11 @@ watch(() => settingsStore.settings.editor.editMode, (newValue, oldValue) => {
   if(newValue === true && oldValue === false) {
     editorSetFocus()
   }
+});
+
+// Watch for emoji select
+watch(() => emojiStore.emoji, (emoji) => {
+  editorInsertAtCursor(emoji)
 });
 </script>
 

@@ -7,6 +7,7 @@ import { useSearchStore } from '@/stores/searchStore';
 import { useLogStore } from '@/stores/logStore';
 import { useDbStore } from '@/stores/dbStore';
 import { useAboutStore } from '@/stores/aboutStore';
+import { useEmojiStore } from '@/stores/emojiStore';
 
 type ActionMap = Record<string, () => void>
 
@@ -18,6 +19,7 @@ export const useActionsStore = defineStore('actions', () => {
 	const logStore = useLogStore()
 	const dbStore = useDbStore()
 	const aboutStore = useAboutStore()
+	const emojiStore = useEmojiStore()
 
 	// GENERAL
 
@@ -33,6 +35,13 @@ export const useActionsStore = defineStore('actions', () => {
 
 	general.showAbout = () => {
 		aboutStore.showDialog()
+	}
+
+	general.showEmojiSelector = () => {
+    if(!notesStore.isNoteOpened){
+      return
+    }
+		emojiStore.showDialog()
 	}
 
 	// TREEVIEW

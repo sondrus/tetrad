@@ -13,6 +13,8 @@ export const useHotkeysStore = defineStore('hokey', () => {
 				['Ctrl+Alt+H', actions.general.goToWelcomePage],
 			message_log:
 				['Ctrl+Alt+M', actions.general.showMessageLog],
+      emoji_selector:
+        ['Ctrl+Alt+J', actions.general.showEmojiSelector],
 		},
 		treeview: {
 			expand_all:

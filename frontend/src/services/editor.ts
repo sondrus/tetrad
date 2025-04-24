@@ -165,7 +165,7 @@ const editorSetFocus = (delay: number = 10) => {
 }
 
 // Insert text at cursor
-const insertAtCursor = (text: string) => {
+const editorInsertAtCursor = (text: string) => {
 	if (!editor) {
     return;
   }
@@ -180,4 +180,5 @@ const insertAtCursor = (text: string) => {
 // Is focused?
 const editorIsFocused = () => isFocused
 
-export { editorCreate, editorSetContent, editorSetLineWrap, editorSetFocus, editorIsFocused, insertAtCursor }
+export { editorCreate, editorSetContent, editorSetLineWrap, editorSetFocus, editorIsFocused,
+  editorInsertAtCursor }

@@ -154,12 +154,21 @@
           </template>
 
           <template v-if="settingsStore.widthWindow <= 767">
-            <li ></li>
+            <li></li>
             <li>
               <button
                 @click="actionsStore.view.toggleReverseMobileInterface"
                 :class="{selected: settingsStore.isReverseMobileInterface()}"
               >{{$t('menu.reverse_mobile_interface')}}</button>
+            </li>
+          </template>
+
+          <template v-if="settingsStore.isEditMode() || settingsStore.settings.doublePanel.enabled">
+            <li></li>
+            <li>
+              <button
+                @click="actionsStore.general.showEmojiSelector"
+              >{{$t('menu.emoji')}}</button>
             </li>
           </template>
 
