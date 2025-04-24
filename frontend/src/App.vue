@@ -72,7 +72,7 @@ onBeforeUnmount(() => {
 
 // Handler click on internal link (referred to another note)
 const onLinkClick = (event: Event) => {
-  const target = (event.target as HTMLElement).closest('a, span');
+  const target = (event.target as HTMLElement).closest('a');
   if(!target){
     return
   }
