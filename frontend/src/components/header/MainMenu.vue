@@ -13,17 +13,18 @@
                   @click="actionsStore.note.addRoot"
                 >{{$t('menu.add_root')}}</button>
 
-                <hr/>
+                <template v-if="notesStore.isNoteOpened">
 
-                <button
-                  @click="actionsStore.note.addNear"
-                >{{$t('menu.add_near')}}</button>
+                  <hr/>
+                  <button
+                    @click="actionsStore.note.addNear"
+                  >{{$t('menu.add_near')}}</button>
 
-                <hr/>
-
-                <button
-                  @click="actionsStore.note.addChild"
-                >{{$t('menu.add_child')}}</button>
+                  <hr/>
+                  <button
+                    @click="actionsStore.note.addChild"
+                  >{{$t('menu.add_child')}}</button>
+                </template>
 
               </div>
             </div>
