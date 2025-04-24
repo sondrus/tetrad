@@ -157,6 +157,11 @@
 	margin-bottom: 10px;
 }
 
+.preview li ol,
+.preview li ul {
+	margin-bottom: 0;
+}
+
 .preview hr {
 	margin: 25px 0;
 }
