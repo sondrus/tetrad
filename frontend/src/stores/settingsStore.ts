@@ -55,6 +55,7 @@ export const useSettingsStore = defineStore('settings', () => {
 			title: false,
 			whole: false,
 			searchDelay: 500,
+      treeMode: false
 		}
 	};
 
@@ -66,7 +67,7 @@ export const useSettingsStore = defineStore('settings', () => {
 	// Highlight.js themes
 	const hljsThemes = ref<string[]>([])
 
-	// 
+	//
 	const setLanguage = (language: string) => {
 		i18n.global.locale.value = language as "en" | "bn" | "br" | "cn" | "de" | "eg" | "es" | "fr" | "hi" | "it" | "jp" | "ko" | "ru" | "tr"
 	}
@@ -107,14 +108,14 @@ export const useSettingsStore = defineStore('settings', () => {
 		// Set loaded flag
 		loaded.value = true
 	};
-	
+
 	function mergeSettings(defaults: Settings, overrides: Partial<Settings>): Settings {
 		const result = { ...defaults };
-	
+
 		for (const key of Object.keys(overrides) as (keyof Settings)[]) {
 			const defaultVal = defaults[key];
 			const overrideVal = overrides[key];
-	
+
 			if (isPlainObject(defaultVal) && isPlainObject(overrideVal)) {
 				result[key] = {
 					...defaultVal,
@@ -126,10 +127,10 @@ export const useSettingsStore = defineStore('settings', () => {
 				result[key] = overrideVal as any;
 			}
 		}
-	
+
 		return result as Settings;
 	}
-	
+
 	function isPlainObject(value: unknown): value is Record<string, unknown> {
 		return typeof value === 'object' && value !== null && !Array.isArray(value);
 	}
@@ -176,20 +177,24 @@ export const useSettingsStore = defineStore('settings', () => {
 		settings.value.sidebar.visible = !settings.value.sidebar.visible;
 	};
 
-	const setFindTitle = (flag: boolean) => {
+	const setSearchFindTitle = (flag: boolean) => {
 		settings.value.search.title = flag;
 	}
 
-	const toggleFindTitle = () => {
+	const toggleSearchFindTitle = () => {
 		settings.value.search.title = !settings.value.search.title;
 	}
 
-	const setFindWhole = (flag: boolean) => {
+	const setSearchFindWhole = (flag: boolean) => {
 		settings.value.search.whole = flag;
 	}
 
-	const toggleFindWhole = () => {
+	const toggleSearchFindWhole = () => {
 		settings.value.search.whole = !settings.value.search.whole;
+	}
+
+	const toggleSearchTreeMode = () => {
+		settings.value.search.treeMode = !settings.value.search.treeMode;
 	}
 
 	const setMultiline = (flag: boolean) => {
@@ -295,7 +300,7 @@ export const useSettingsStore = defineStore('settings', () => {
 		loaded,
 
 		setLanguage,
-		
+
 		widthWindow,
 		widthClientArea,
 
@@ -312,10 +317,11 @@ export const useSettingsStore = defineStore('settings', () => {
 		showSidebar,
 		toggleSidebar,
 
-		setFindTitle,
-		toggleFindTitle,
-		setFindWhole,
-		toggleFindWhole,
+		setSearchFindTitle,
+		toggleSearchFindTitle,
+		setSearchFindWhole,
+		toggleSearchFindWhole,
+    toggleSearchTreeMode,
 
 		setMultiline,
 		toggleMultiline,

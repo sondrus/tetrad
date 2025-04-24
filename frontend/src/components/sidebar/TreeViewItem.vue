@@ -1,5 +1,5 @@
 <template>
-  
+
   <li>
 
     <div
@@ -243,6 +243,13 @@ nav.search_mode li:not(:has(.found_y)) {
 }
 nav.search_mode div.found_n {
   opacity: 0.35;
+}
+/* search mode + tree mode */
+nav.search_mode:not(.tree_mode) div.found_n {
+  display: none !important;
+}
+nav.search_mode:not(.tree_mode) li div {
+  padding-left: 2px !important;
 }
 /**/
 @media (hover: hover) and (pointer: fine) {

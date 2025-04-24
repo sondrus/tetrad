@@ -110,7 +110,7 @@ export const useActionsStore = defineStore('actions', () => {
 	// VIEW
 
 	const view: ActionMap = {};
-	
+
 	view.toggleSidebar = () => {
 		settingsStore.toggleSidebar()
 	}
@@ -149,15 +149,15 @@ export const useActionsStore = defineStore('actions', () => {
 	view.modeDefault = () => {
 		settingsStore.setDoublePanelMode(false, false);
 	}
-	
+
 	view.modeVertical = () => {
 		settingsStore.setDoublePanelMode(true, true);
 	}
-	
+
 	view.modeHorizontal = () => {
 		settingsStore.setDoublePanelMode(true, false);
 	}
-	
+
 	view.toggleWrap = () => {
 		if(settingsStore.settings.doublePanel.enabled){
 			settingsStore.toggleEditorLineWrap()
@@ -176,7 +176,7 @@ export const useActionsStore = defineStore('actions', () => {
 	view.toggleEditorLineWrap = () => {
 		settingsStore.toggleEditorLineWrap()
 	}
-	
+
 	view.toggleViewerPreWrap = () => {
 		settingsStore.toggleViewerPreWrap()
 	}
@@ -193,7 +193,7 @@ export const useActionsStore = defineStore('actions', () => {
 	}
 
 	// SEARCH
-	
+
 	const search: ActionMap = {};
 
 	search.focus = () => {
@@ -205,19 +205,23 @@ export const useActionsStore = defineStore('actions', () => {
 	}
 
 	search.searchInTitles = () => {
-		settingsStore.toggleFindTitle()
+		settingsStore.toggleSearchFindTitle()
 		searchStore.focusInput()
 		searchStore.searchExecute()
 	}
 
 	search.searchWholePhrase = () => {
-		settingsStore.toggleFindWhole()
+		settingsStore.toggleSearchFindWhole()
 		searchStore.focusInput()
 		searchStore.searchExecute()
 	}
 
+	search.searchTreeMode = () => {
+		settingsStore.toggleSearchTreeMode()
+	}
+
 	// DATABASE
-	
+
 	const database: ActionMap = {};
 
 	database.optimize = () => {

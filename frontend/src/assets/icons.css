@@ -96,6 +96,10 @@ span.icon {
 	background-image: url('data:image/webp;base64,UklGRpQAAABXRUJQVlA4WAoAAAAQAAAAHwAAHwAAQUxQSEcAAAABYBvbVhSoB+rRAnfN0DagGD+pzo1YM7OImAD1C84y1BjjlPrYa+y8KThrnNBPxOsyHXhSN/izOIBLWaGqmJSyl5SJM+ofBABWUDggJgAAANACAJ0BKiAAIAA+kUSdSqWjoqGoCACwEglpAAA9o6AA/vjPGsAA');
 }
 
+.icon.tree {
+  background-image: url('data:image/webp;base64,UklGRm4AAABXRUJQVlA4WAoAAAAQAAAADwAADwAAQUxQSDAAAAABJyAQIPyHyWIjIoJtKGQjCRqFUTmF86f6ESL6PwGMgW0OPAaqkMNnoCWHa6AKOfRWUDggGAAAADABAJ0BKhAAEAACADQlpAADcAD+8MGgAA==');
+}
+
 /* Fav */
 
 .icon.fav {

@@ -1,11 +1,12 @@
 <template>
-  
+
   <nav ref="refNav" tabindex="0" :class="{
     multiline: settingsStore.settings.treeview.multiline,
     select_mode: props.selectMode,
     search_mode: !props.selectMode && searchStore.searchMode,
     is_loading: !props.selectMode && searchStore.isLoading,
-  }">  
+    tree_mode: !props.selectMode && settingsStore.settings.search.treeMode
+  }">
     <ul>
       <TreeViewItem v-if="props.selectMode"
         :selectMode="props.selectMode"

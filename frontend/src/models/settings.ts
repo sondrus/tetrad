@@ -38,5 +38,6 @@ export interface Settings {
 		title: boolean,
 		whole: boolean,
 		searchDelay: number,
+		treeMode: boolean,
 	}
 }

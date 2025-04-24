@@ -2,7 +2,7 @@
   <div>
     <input type="text" ref="searchBox" v-model="searchStore.searchText"
       :placeholder="$t('search.placeholder')" />
-    
+
     <button ref="clearButton" class="icon clear"
       v-if="searchStore.searchText.length"
       :title="$t('search.clear')"
@@ -10,23 +10,33 @@
     ></button>
 
     <span>
-      
-      <button :class="['title', 'icon', 'label', {
-        activated: settingsStore.settings.search.title 
-      }]"
+
+      <button
+        :class="['title', 'icon', 'label', {
+          activated: settingsStore.settings.search.title
+        }]"
         :title="$t('search.just_in_titles')"
         @click="actionsStore.search.searchInTitles"
       ></button>
-      
-      <button :class="['whole', 'icon', 'space', {
-        activated: settingsStore.settings.search.whole 
-      }]"
+
+      <button
+        :class="['whole', 'icon', 'space', {
+          activated: settingsStore.settings.search.whole
+        }]"
         :title="$t('search.whole_phrases')"
         @click="actionsStore.search.searchWholePhrase"
       ></button>
 
+      <button
+        :class="['treemode', 'icon', 'tree', {
+          activated: settingsStore.settings.search.treeMode
+        }]"
+        :title="$t('search.tree_mode')"
+        @click="actionsStore.search.searchTreeMode"
+      ></button>
+
     </span>
-    
+
   </div>
 </template>
 
