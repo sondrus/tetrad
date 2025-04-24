@@ -11,13 +11,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, watch, nextTick } from 'vue'
 
 import SearchBox from '@/components/sidebar/SearchBox.vue'
 import TreeView from '@/components/sidebar/TreeView.vue'
 
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useSearchStore } from '@/stores/searchStore'
+import { scrollToSelected } from '@/utils/viewport.ts'
 
 const settingsStore = useSettingsStore()
 const searchStore = useSearchStore();
@@ -27,6 +28,16 @@ const sidebarStyle = computed(() => ({
     ? `${settingsStore.settings.sidebar.width}px`
     : '',
 }))
+
+// Watch for change sidebar vsibility => scroll to selected note in tree
+watch(() => settingsStore.settings.sidebar.visible, (visible) => {
+  if(!visible){
+    return
+  }
+  nextTick(() => {
+    scrollToSelected(document.querySelector('nav'))
+  })
+})
 </script>
 
 <style scoped>
