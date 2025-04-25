@@ -401,7 +401,7 @@
 	cursor: pointer;
 	font-size: 10px;
 	height: 24px;
-	left: 2px;
+	right: 2px;
 	padding: 0 10px 0 30px;
 	position: absolute;
 	top: 2px;
@@ -449,7 +449,7 @@
 	color: #666;
 	font: normal 10px monospace;
 	position: absolute;
-	right: 15px;
+	left: 15px;
 	top: 6px;
 	user-select: none;
 }
