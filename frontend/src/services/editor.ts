@@ -67,7 +67,15 @@ const editorCreate = (parent: HTMLElement, callback: () => refContents) => {
 				...defaultKeymap,
 				...searchKeymap,
 				...foldKeymap,
-				{ key: "Tab", run: indentMore },
+				{ key: "Tab", run: ({state, dispatch}) => {
+					if (state.selection.ranges.some(range => !range.empty)) {
+						return indentMore({state, dispatch});
+					}
+					else {
+						dispatch(state.update(state.replaceSelection("\t")));
+						return true;
+					}
+				} },
 				{ key: "Shift-Tab", run: indentLess },
 				{ key: "Ctrl-d", run: copyLineDown },
 				{ key: "Ctrl-Shift-ArrowUp", run: moveLineUp },
