@@ -91,17 +91,26 @@ const getHighlightLang = (language) => {
 const anchorSlugify = (text) => {
 	// Convert to lowercase
 	text = text.toLowerCase();
-	
+
 	// Normalize text to remove accents and diacritical marks
 	text = text.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-	
+
 	// Replace non-alphanumeric characters with dashes
 	text = text.replace(/[^a-z0-9]+/g, '_');
-	
+
 	// Trim dashes from the beginning and end
 	text = text.replace(/^[-]+|[-]+$/g, '');
-	
+
 	return 'tetrad_' + text;
+}
+
+// Render container (eg, `:::note`)
+const renderContainer = (tokens, idx) => {
+  if (tokens[idx].nesting === 1) {
+    return `<div class="container ${tokens[idx].info.trim()}">\n`;
+  } else if (tokens[idx].nesting === -1) {
+    return '</div>\n';
+  }
 }
 
 // Init markdown-it
@@ -121,7 +130,7 @@ const markdownIt = markdownit({
 })
 .use(pluginLinkAttributes, {
 	attrs: {
-		target: "_blank" 
+		target: "_blank"
 	}
 })
 .use(pluginKbd)
@@ -140,11 +149,11 @@ const markdownIt = markdownit({
 	aotolabel: true
 })
 .use(pluginPlantUML)
-.use(pluginContainer, 'error')
-.use(pluginContainer, 'warning')
-.use(pluginContainer, 'info')
-.use(pluginContainer, 'note')
-.use(pluginContainer, 'quote')
+.use(pluginContainer, 'error', {render: renderContainer})
+.use(pluginContainer, 'warning', {render: renderContainer})
+.use(pluginContainer, 'info', {render: renderContainer})
+.use(pluginContainer, 'note', {render: renderContainer})
+.use(pluginContainer, 'quote', {render: renderContainer})
 .use(pluginVideo)
 .use(pluginAnchor, {
 	slugify: anchorSlugify
@@ -152,7 +161,7 @@ const markdownIt = markdownit({
 .use(pluginToc, {
 	slugify: anchorSlugify,
 	containerClass: 'table_of_contents',
-	includeLevel: [2]
+	includeLevel: [2, 3]
 })
 
 // markdown-it-imsize (original is not working :( )
