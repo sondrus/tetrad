@@ -228,7 +228,6 @@ export const useActionsStore = defineStore('actions', () => {
 	search.searchTreeMode = () => {
 		settingsStore.toggleSearchTreeMode()
 		searchStore.focusInput()
-		searchStore.searchExecute()
 	}
 
 	// DATABASE
