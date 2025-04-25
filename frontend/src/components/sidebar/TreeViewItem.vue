@@ -125,20 +125,28 @@ const isFound = computed(() => {
   if(!props.searchMode){
     return false;
   }
+
   if(!props.note?.id){
     return;
   }
+
   return searchStore.searchResults.includes(props.note?.id)
 });
 
-const onMouseDown = () => {
+const onMouseDown = (event: MouseEvent) => {
   if(isRestricted.value){
     return
   }
+
   if(props.selectMode){
     newNoteStore.targetIdSelected = props.note?.id || 0
     return
   }
+
+  if(event.button === 1 && props.note?.type === 'URL'){
+    window.open(props.note?.url, '_blank')
+  }
+
   notesStore.setCurrent(props.note?.id)
 }
 
