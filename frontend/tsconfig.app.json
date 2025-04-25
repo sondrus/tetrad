@@ -3,8 +3,9 @@
 	"include": [
 		"env.d.ts",
 		"src/**/*",
-		"src/**/*.vue"
-, "i18n.ts"	],
+		"src/**/*.vue",
+		"i18n.ts"
+	],
 	"exclude": [
 		"src/**/__tests__/*"
 	],
