@@ -1,0 +1,19 @@
+.cm-editor .cm-panel {
+  user-select: none;
+}
+
+.cm-editor .cm-textfield,
+.cm-editor .cm-button {
+  font-size: 85%;
+}
+
+.cm-editor .cm-panel.cm-search label {
+  display: inline-flex;
+  margin: 0 0 0 10px;
+  user-select: text;
+  vertical-align: middle;
+}
+
+.cm-editor .cm-panel.cm-search label input[type=checkbox] {
+  margin: 0 4px 0 0;
+}

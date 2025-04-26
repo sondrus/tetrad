@@ -1,6 +1,7 @@
 import './assets/base.css'
 import './assets/main.css'
 import './assets/icons.css'
+import './assets/editor.css'
 import './assets/preview.css'
 
 import { createApp } from 'vue'
