@@ -52,7 +52,7 @@ deps:
 liveserver:
 	cd $(FRONTEND_DIR) && npm run dev
 
-crossbuild_linux:
+crossbuild_linux: front
 	@# 386
 	cd $(BACKEND_DIR) && GOOS=linux GOARCH=386 \
 		go build -ldflags="-s -w" -o ../release/$(APP)_linux_386 main.go && \
@@ -77,7 +77,7 @@ crossbuild_linux:
 		tar -czf release/$(APP)_$(VERSION)_linux_arm64.tar.gz README.MD LICENSE -C release $(APP)_linux_arm64 && \
 		rm release/$(APP)_linux_arm64
 
-crossbuild_macos:
+crossbuild_macos: front
 	@# amd64
 	cd $(BACKEND_DIR) && GOOS=darwin GOARCH=amd64  \
 		go build -ldflags="-s -w" -o ../release/$(APP)_macos_amd64 main.go && \
@@ -92,7 +92,7 @@ crossbuild_macos:
 		tar -czf release/$(APP)_$(VERSION)_macos_arm64.tar.gz README.MD LICENSE -C release $(APP)_macos_arm64 && \
 		rm release/$(APP)_macos_arm64
 
-crossbuild_windows:
+crossbuild_windows: front
 	@# amd64
 	cd $(BACKEND_DIR) && GOOS=windows GOARCH=amd64  CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc \
 		go build -ldflags="-s -w -H windowsgui" -o ../release/$(APP)_win_amd64.exe main.go && \
@@ -116,7 +116,7 @@ crossbuild_windows:
 		zip -9 -q -j release/$(APP)_$(VERSION)_win_arm64.zip README.MD LICENSE release/$(APP)_win_arm64.exe && \
 		rm release/$(APP)_win_arm64.exe
 
-crossbuild_android:
+crossbuild_android: front
 	@# arm64
 	cd $(BACKEND_DIR) && \
 		export NDK=$(NDK) && \
