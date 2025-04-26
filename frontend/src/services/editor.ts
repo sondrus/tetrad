@@ -62,11 +62,6 @@ const editorCreate = (parent: HTMLElement, callback: () => refContents) => {
 			undoRedo.of([history()]),
 			createUpdateListener(callback),
 			keymap.of([
-				...historyKeymap,
-				...closeBracketsKeymap,
-				...defaultKeymap,
-				...searchKeymap,
-				...foldKeymap,
 				{ key: "Tab", run: ({state, dispatch}) => {
 					if (state.selection.ranges.some(range => !range.empty)) {
 						return indentMore({state, dispatch});
@@ -84,6 +79,11 @@ const editorCreate = (parent: HTMLElement, callback: () => refContents) => {
 				{ key: "Alt-ArrowDown", run: () => true },
 				{ key: "Shift-Alt-ArrowUp", run: () => true },
 				{ key: "Shift-Alt-ArrowDown", run: () => true },
+				...historyKeymap,
+				...closeBracketsKeymap,
+				...defaultKeymap,
+				...searchKeymap,
+				...foldKeymap,
 			]),
 			lineWrappingCompartment.of([]),
 		]

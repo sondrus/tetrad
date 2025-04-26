@@ -17,10 +17,10 @@ export const useHotkeysStore = defineStore('hokey', () => {
         ['Ctrl+Alt+J', actions.general.showEmojiSelector],
 		},
 		treeview: {
-			expand_all:
-				['Ctrl+Alt+ArrowLeft', actions.treeview.collapseAll],
 			collapse_all:
-				['Ctrl+Alt+ArrowRight', actions.treeview.expandAll],
+				['Ctrl+Alt+A', actions.treeview.collapseAll],
+      expand_all:
+				['Ctrl+Alt+G', actions.treeview.expandAll],
 			multiline_toggle:
 				['Ctrl+Alt+X', actions.treeview.multilineToggle],
 			go_home:
