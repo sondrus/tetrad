@@ -55,7 +55,7 @@ const emojiSelected = ref<HTMLInputElement>();
 // Popup buttons
 const popupButtons = [
   {
-    lang: 'btn_ok',
+    lang: 'button.ok',
     icon: 'check',
     onClick: () => {
       emojiStore.emoji = emojiSelected.value?.value ?? '';
@@ -63,7 +63,7 @@ const popupButtons = [
     }
   },
   {
-    lang: 'btn_cancel',
+    lang: 'button.cancel',
     icon: 'cancel',
     onClick: () => emojiStore.closeDialog(),
   },

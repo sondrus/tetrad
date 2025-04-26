@@ -81,8 +81,8 @@
 
 	"popup_emoji.header": "Choose emoji",
 
-	"btn_ok": "OK",
-	"btn_cancel": "Cancel",
+	"button.ok": "OK",
+	"button.cancel": "Cancel",
 
 	"emoji.symbols": "✅ Symbols",
 	"emoji.objects": "📌 Objects",

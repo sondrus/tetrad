@@ -77,8 +77,8 @@
 
 	"popup_license.header": "Testo della licenza",
 
-	"btn_ok": "OK",
-	"btn_cancel": "Annulla",
+	"button.ok": "OK",
+	"button.cancel": "Annulla",
 
 	"error.loading": "Impossibile caricare le note. Assicurati che l'app sia in esecuzione."
 }

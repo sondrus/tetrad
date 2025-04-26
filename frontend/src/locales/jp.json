@@ -77,8 +77,8 @@
 
 	"popup_license.header": "ライセンステキスト",
 
-	"btn_ok": "OK",
-	"btn_cancel": "キャンセル",
+	"button.ok": "OK",
+	"button.cancel": "キャンセル",
 
 	"error.loading": "ノートの読み込みに失敗しました。アプリが実行中か確認してください。"
 }

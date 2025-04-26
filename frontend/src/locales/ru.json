@@ -78,8 +78,8 @@
 
 	"popup_license.header": "Текст лицензии",
 
-	"btn_ok": "OK",
-	"btn_cancel": "Отмена",
+	"button.ok": "OK",
+	"button.cancel": "Отмена",
 
 	"error.loading": "Не удалось загрузить заметки. Убедитесь, что приложение запущено."
 }

@@ -77,8 +77,8 @@
 
 	"popup_license.header": "许可文本",
 
-	"btn_ok": "确定",
-	"btn_cancel": "取消",
+	"button.ok": "确定",
+	"button.cancel": "取消",
 
 	"error.loading": "加载笔记失败。请确保应用程序正在运行。"
 }

@@ -128,12 +128,12 @@ const popupTitle = computed(() =>
 // Popup buttons
 const popupButtons = [
   {
-    lang: 'btn_ok',
+    lang: 'button.ok',
     icon: 'check',
     type: 'submit' as const,
   },
   {
-    lang: 'btn_cancel',
+    lang: 'button.cancel',
     icon: 'cancel',
     type: 'button' as const,
     onClick: () => newNoteStore.close(),

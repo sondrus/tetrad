@@ -12,7 +12,7 @@
         <div class="contents license_text" v-html="aboutStore.getLicenseText"></div>
 
         <PopupFooter :actions="popupButtons" />
-        
+
       </div>
     </dialog>
 
@@ -35,7 +35,7 @@ const refDialog = ref<HTMLDialogElement>()
 // Popup buttons
 const popupButtons = [
   {
-    lang: 'btn_ok',
+    lang: 'button.ok',
     icon: 'check',
     onClick: () => aboutStore.closeLicenseDialog(),
   },

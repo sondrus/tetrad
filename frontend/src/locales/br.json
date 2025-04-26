@@ -65,8 +65,8 @@
 	"popup_parent.type": "Tipo de nota",
 	"popup_parent.note_url": "URL da nota (https://...)",
 
-	"btn_ok": "OK",
-	"btn_cancel": "Cancelar",
+	"button.ok": "OK",
+	"button.cancel": "Cancelar",
 
 	"error.loading": "Não foi possível carregar as notas. Verifique se o aplicativo está em execução."
 }

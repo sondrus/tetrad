@@ -77,8 +77,8 @@
 
 	"popup_license.header": "라이센스 텍스트",
 
-	"btn_ok": "확인",
-	"btn_cancel": "취소",
+	"button.ok": "확인",
+	"button.cancel": "취소",
 
 	"error.loading": "노트를 로드할 수 없습니다. 앱이 실행 중인지 확인하세요."
 }

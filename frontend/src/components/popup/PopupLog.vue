@@ -15,7 +15,7 @@
             <span class="timestamp">[{{ logStore.formatDate(log.timestamp) }}] </span>
             <span class="message">{{ log.message }}</span>
           </div>
-          
+
         </div>
 
         <PopupFooter :actions="popupButtons" />
@@ -44,7 +44,7 @@ const refDialog = ref<HTMLDialogElement>()
 // Popup buttons
 const popupButtons = [
   {
-    lang: 'btn_ok',
+    lang: 'button.ok',
     icon: 'check',
     onClick: () => logStore.closeDialog(),
   },

@@ -77,8 +77,8 @@
 
 	"popup_license.header": "نص الترخيص",
 
-	"btn_ok": "موافق",
-	"btn_cancel": "إلغاء",
+	"button.ok": "موافق",
+	"button.cancel": "إلغاء",
 
 	"error.loading": "تعذر تحميل الملاحظات. تأكد من أن التطبيق قيد التشغيل."
 }

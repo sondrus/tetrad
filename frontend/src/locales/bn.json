@@ -77,8 +77,8 @@
 
 	"popup_license.header": "লাইসেন্স টেক্সট",
 
-	"btn_ok": "ঠিক আছে",
-	"btn_cancel": "বাতিল করুন",
+	"button.ok": "ঠিক আছে",
+	"button.cancel": "বাতিল করুন",
 
 	"error.loading": "নোট লোড করা যাচ্ছে না। নিশ্চিত করুন যে অ্যাপটি চলছে।"
 }

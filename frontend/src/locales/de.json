@@ -77,8 +77,8 @@
 
 	"popup_license.header": "Lizenztext",
 
-	"btn_ok": "OK",
-	"btn_cancel": "Abbrechen",
+	"button.ok": "OK",
+	"button.cancel": "Abbrechen",
 
 	"error.loading": "Notizen können nicht geladen werden. Stellen Sie sicher, dass die App läuft."
 }

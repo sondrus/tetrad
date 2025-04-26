@@ -10,7 +10,7 @@
         <PopupHeader :title="$t('popup_about.header')" />
 
         <div class="contents">
-          
+
           <div class="about_main">
             <div class="about_main-icon">
               <span class="icon logo"></span>
@@ -41,7 +41,7 @@
         </div>
 
         <PopupFooter :actions="popupButtons" />
-        
+
       </div>
     </dialog>
 
@@ -64,7 +64,7 @@ const refDialog = ref<HTMLDialogElement>()
 // Popup buttons
 const popupButtons = [
   {
-    lang: 'btn_ok',
+    lang: 'button.ok',
     icon: 'check',
     onClick: () => aboutStore.closeDialog(),
   },

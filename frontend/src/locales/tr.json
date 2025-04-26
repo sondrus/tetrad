@@ -77,8 +77,8 @@
 
 	"popup_license.header": "Lisans metni",
 
-	"btn_ok": "Tamam",
-	"btn_cancel": "İptal",
+	"button.ok": "Tamam",
+	"button.cancel": "İptal",
 
 	"error.loading": "Notlar yüklenemedi. Uygulamanın çalıştığından emin olun."
 }

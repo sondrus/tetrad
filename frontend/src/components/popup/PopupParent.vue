@@ -9,9 +9,9 @@
         <PopupHeader :title="$t('popup_parent.title')" />
 
         <div class="contents">
-          
+
           <TreeView :selectMode="true" />
-          
+
         </div>
 
         <PopupFooter :actions="popupButtons" />
@@ -42,7 +42,7 @@ const refDialog = ref<HTMLDialogElement>()
 // Popup buttons
 const popupButtons = [
   {
-    lang: 'btn_ok',
+    lang: 'button.ok',
     icon: 'check',
     onClick: () => {
       newNoteStore.targetId = newNoteStore.targetIdSelected
@@ -50,7 +50,7 @@ const popupButtons = [
     },
   },
   {
-    lang: 'btn_cancel',
+    lang: 'button.cancel',
     icon: 'cancel',
     onClick: () => newNoteStore.closeSelectParent(),
   },
