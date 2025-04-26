@@ -24,6 +24,35 @@ export const useLogStore = defineStore('log', () => {
 	}))
 	const lastMessage = computed(() => logs.value[logs.value.length - 1] || null)
 
+	const debugMode = ref<boolean>(getInitialDebug())
+
+	// Check cookie: is debug mode?
+	function getInitialDebug(): boolean {
+		return document.cookie.split('; ').some(cookie => {
+				const [key, value] = cookie.split('=');
+				return key === 'debug' && value === '1';
+		});
+}
+
+	// Debug: debug('Title', { a }, { b }, { c });
+	const debug = (title: string, ...vars: { [key: string]: unknown }[]) => {
+		if(!debugMode.value){
+			return;
+		}
+
+		if(!vars.length){
+			return;
+		}
+
+		console.groupCollapsed(`[DEBUG] ${title}`);
+		vars.forEach((item) => {
+			for (const [name, value] of Object.entries(item)) {
+				console.log(`${name}:`, value);
+			}
+		})
+		console.groupEnd();
+	}
+
 	// If need show old items
 	function loadFromStorage() {
 		const raw = localStorage.getItem(STORAGE_KEY)
@@ -113,6 +142,8 @@ export const useLogStore = defineStore('log', () => {
 		isOpen,
 		showDialog,
 		closeDialog,
+
+		debug,
 
 		add,
 		info,

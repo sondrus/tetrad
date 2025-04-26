@@ -3,86 +3,88 @@ import { ref } from 'vue';
 
 import type { HotKeys } from '@/models/hotkeys';
 import { useActionsStore } from '@/stores/actionsStore';
+import { useLogStore } from '@/stores/logStore';
 
 export const useHotkeysStore = defineStore('hokey', () => {
-	const actions = useActionsStore()
+	const actionsStore = useActionsStore()
+	const logStore = useLogStore()
 
 	const hotkeysDefault: HotKeys = {
 		general: {
 			homepage:
-				['Ctrl+Alt+H', actions.general.goToWelcomePage],
+				['Ctrl+Alt+H', actionsStore.general.goToWelcomePage],
 			message_log:
-				['Ctrl+Alt+M', actions.general.showMessageLog],
-      emoji_selector:
-        ['Ctrl+Alt+J', actions.general.showEmojiSelector],
+				['Ctrl+Alt+M', actionsStore.general.showMessageLog],
+			emoji_selector:
+				['Ctrl+Alt+J', actionsStore.general.showEmojiSelector],
 		},
 		treeview: {
 			collapse_all:
-				['Ctrl+Alt+A', actions.treeview.collapseAll],
-      expand_all:
-				['Ctrl+Alt+G', actions.treeview.expandAll],
+				['Ctrl+Alt+A', actionsStore.treeview.collapseAll],
+			expand_all:
+				['Ctrl+Alt+G', actionsStore.treeview.expandAll],
 			multiline_toggle:
-				['Ctrl+Alt+X', actions.treeview.multilineToggle],
+				['Ctrl+Alt+X', actionsStore.treeview.multilineToggle],
 			go_home:
-				['Ctrl+Alt+ArrowUp', actions.treeview.goHome],
+				['Ctrl+Alt+ArrowUp', actionsStore.treeview.goHome],
 			go_end:
-				['Ctrl+Alt+ArrowDown', actions.treeview.goEnd],
+				['Ctrl+Alt+ArrowDown', actionsStore.treeview.goEnd],
 			go_up:
-				['Alt+ArrowUp', actions.treeview.goUp],
+				['Alt+ArrowUp', actionsStore.treeview.goUp],
 			go_down:
-				['Alt+ArrowDown', actions.treeview.goDown],
+				['Alt+ArrowDown', actionsStore.treeview.goDown],
 			go_parent:
-				['Alt+ArrowLeft', actions.treeview.goParent],
+				['Alt+ArrowLeft', actionsStore.treeview.goParent],
 			go_child:
-				['Alt+ArrowRight', actions.treeview.goChild],
+				['Alt+ArrowRight', actionsStore.treeview.goChild],
 		},
 		note: {
 			add_root:
-				['Ctrl+Alt+R', actions.note.addRoot],
+				['Ctrl+Alt+R', actionsStore.note.addRoot],
 			add_near:
-				['Ctrl+Alt+N', actions.note.addNear],
+				['Ctrl+Alt+N', actionsStore.note.addNear],
 			add_child:
-				['Ctrl+Alt+C', actions.note.addChild],
+				['Ctrl+Alt+C', actionsStore.note.addChild],
 			edit:
-				['Ctrl+Alt+Q', actions.note.edit],
+				['Ctrl+Alt+Q', actionsStore.note.edit],
 			delete:
-				['Ctrl+Alt+D', actions.note.delete],
+				['Ctrl+Alt+D', actionsStore.note.delete],
 		},
 		view: {
 			sidebar:
-				['Ctrl+Alt+S', actions.view.toggleSidebar],
+				['Ctrl+Alt+S', actionsStore.view.toggleSidebar],
 			viewer:
-				['Ctrl+Alt+V', actions.view.showViewer],
+				['Ctrl+Alt+V', actionsStore.view.showViewer],
 			editor:
-				['Ctrl+Alt+E', actions.view.showEditor],
+				['Ctrl+Alt+E', actionsStore.view.showEditor],
 			toggle:
-				['Ctrl+Space', actions.view.toggle],
+				['Ctrl+Space', actionsStore.view.toggle],
 			mode_default:
-				['Ctrl+Alt+Backquote', actions.view.modeDefault],
+				['Ctrl+Alt+Backquote', actionsStore.view.modeDefault],
 			mode_vertical:
-				['Ctrl+Alt+1', actions.view.modeVertical],
+				['Ctrl+Alt+1', actionsStore.view.modeVertical],
 			mode_horizontal:
-				['Ctrl+Alt+2', actions.view.modeHorizontal],
+				['Ctrl+Alt+2', actionsStore.view.modeHorizontal],
 			linewrap:
-				['Ctrl+Alt+L', actions.view.toggleWrap],
+				['Ctrl+Alt+L', actionsStore.view.toggleWrap],
 		},
 		search: {
 			focus:
-				['Ctrl+Alt+F', actions.search.focus],
+				['Ctrl+Alt+F', actionsStore.search.focus],
 			clear:
-				['Ctrl+Alt+Z', actions.search.clear],
+				['Ctrl+Alt+Z', actionsStore.search.clear],
 			title:
-				['Ctrl+Alt+T', actions.search.searchInTitles],
+				['Ctrl+Alt+T', actionsStore.search.searchInTitles],
 			whole:
-				['Ctrl+Alt+W', actions.search.searchWholePhrase],
+				['Ctrl+Alt+W', actionsStore.search.searchWholePhrase],
 			tree_mode:
-				['Ctrl+Alt+Y', actions.search.searchTreeMode],
+				['Ctrl+Alt+Y', actionsStore.search.searchTreeMode],
 		},
 		database: {
 			vacuum:
-				['Ctrl+Alt+Minus', actions.database.optimize],
+				['Ctrl+Alt+Minus', actionsStore.database.optimize],
 			download:
-				['Ctrl+Alt+Equal', actions.database.download],
+				['Ctrl+Alt+Equal', actionsStore.database.download],
 		}
 	};
 
@@ -100,6 +102,8 @@ export const useHotkeysStore = defineStore('hokey', () => {
 		if (!hotkey) {
 			return;
 		}
+
+		logStore.debug('Hot key pressed', {hotkey}, {event})
 
 		for (const group in hotkeys.value) {
 			if (!Object.hasOwn(hotkeys.value, group)) {

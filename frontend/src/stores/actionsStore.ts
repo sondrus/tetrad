@@ -8,6 +8,7 @@ import { useLogStore } from '@/stores/logStore';
 import { useDbStore } from '@/stores/dbStore';
 import { useAboutStore } from '@/stores/aboutStore';
 import { useEmojiStore } from '@/stores/emojiStore';
+import { selectNote } from '@/utils/noteselect';
 
 type ActionMap = Record<string, () => void>
 
@@ -38,9 +39,9 @@ export const useActionsStore = defineStore('actions', () => {
 	}
 
 	general.showEmojiSelector = () => {
-    if(!notesStore.isNoteOpened){
-      return
-    }
+		if(!notesStore.isNoteOpened){
+			return
+		}
 		emojiStore.showDialog()
 	}
 
@@ -69,27 +70,27 @@ export const useActionsStore = defineStore('actions', () => {
 	}
 
 	treeview.goHome = () => {
-		console.log('Go home..')
+		selectNote(document.querySelector('aside nav'), 'HOME')
 	}
 
 	treeview.goEnd = () => {
-		console.log('Go end..')
+		selectNote(document.querySelector('aside nav'), 'END')
 	}
 
 	treeview.goUp = () => {
-		console.log('Go up..')
+		selectNote(document.querySelector('aside nav'), 'UP')
 	}
 
 	treeview.goDown = () => {
-		console.log('Go down..')
+		selectNote(document.querySelector('aside nav'), 'DOWN')
 	}
 
 	treeview.goParent = () => {
-		console.log('Go parent..')
+		selectNote(document.querySelector('aside nav'), 'PARENT')
 	}
 
 	treeview.goChild = () => {
-		console.log('Go child..')
+		selectNote(document.querySelector('aside nav'), 'CHILD')
 	}
 
 	// NOTE

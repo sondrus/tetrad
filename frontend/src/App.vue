@@ -85,7 +85,7 @@ const onLinkClick = (event: Event) => {
   const noteIdFromData = (target.getAttribute('data-note-id') ?? '')
   if(noteIdFromData.match(/^\d+$/)){
     event.preventDefault()
-    notesStore.setCurrent(parseInt(noteIdFromData), true)
+    notesStore.setCurrent(parseInt(noteIdFromData), false, true)
   }
 
   // Check hash is set
@@ -98,7 +98,7 @@ const onLinkClick = (event: Event) => {
   const noteIdFromHash = hash.replace(/^[@#]/, '')
   if(noteIdFromHash.match(/^\d+$/)){
     event.preventDefault()
-    notesStore.setCurrent(parseInt(noteIdFromHash), true)
+    notesStore.setCurrent(parseInt(noteIdFromHash), false, true)
   }
 
   // Check if <a> has `href="#header-x"`

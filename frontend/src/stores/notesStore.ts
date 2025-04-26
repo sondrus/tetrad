@@ -4,13 +4,13 @@ import { ref, computed, reactive, watch, watchEffect } from 'vue';
 import type { Note, SaveNote } from '@/models/note';
 import { i18n } from '@/i18n'
 import { fetcher } from '@/utils/fetch';
+import { scrollToSelected } from '@/utils/viewport.ts'
 import { useSettingsStore } from '@/stores/settingsStore';
 import { useLogStore } from '@/stores/logStore';
-import { scrollToSelected } from '@/utils/viewport.ts'
 
 export const useNotesStore = defineStore('notes', () => {
-	const logStore = useLogStore()
 	const settingsStore = useSettingsStore()
+	const logStore = useLogStore()
 
 	// Flag for check if notes was loaded
 	const loaded = ref<boolean>(false);
@@ -65,8 +65,9 @@ export const useNotesStore = defineStore('notes', () => {
 		return loaded && !readonly && typeEditable
 	}
 
-	// Set current note
-	const setCurrent = (id: number | undefined, expand: boolean = false) => {
+	// Set current note (debounce - just for load contents)
+  let debounceTimerSetCurrent: number | undefined
+	const setCurrent = (id: number | undefined, debounce: boolean = false, expand: boolean = false) => {
 		// Do not change if already set as current
 		if(id == current.value?.id){ // this interferes select note after save, so move this logic to component
 			return
@@ -85,7 +86,7 @@ export const useNotesStore = defineStore('notes', () => {
 			return
 		}
 
-		// Search note by id
+		// Get note by id
 		const note = notesMap.get(id)
 		if (!note) {
 			logStore.error(`Note ${id} is not found!`)
@@ -100,14 +101,20 @@ export const useNotesStore = defineStore('notes', () => {
 		expandParents(note.id)
 
 		// Expand current note
-		note.expanded = expand
+		if(expand === true){
+      toggleExpand(note.id, true)
+		}
 
 		// Scroll to note
 		scrollToSelected(document.querySelector('nav'))
 
-		// Load contents
+		// Load contents (with debounce for fast navigate in treeview)
 		if(!['URL'].includes(note.type)){
-			loadNoteContents(note.id);
+      const delay = debounce ? 50 : 0
+      clearTimeout(debounceTimerSetCurrent)
+      debounceTimerSetCurrent = setTimeout(() => {
+        loadNoteContents(note.id);
+      }, delay)
 		}
 
 		// Auto view (or if not editable): viewer mode
@@ -355,10 +362,10 @@ export const useNotesStore = defineStore('notes', () => {
 	};
 
 	// Save note contents using timeout
-	let debounceTimer: number | undefined
+	let debounceTimerSaveNoteContents: number | undefined
 	const saveNoteContentsWithDebounce = async (id: number, contents: string) => {
-		clearTimeout(debounceTimer)
-		debounceTimer = setTimeout(() => {
+		clearTimeout(debounceTimerSaveNoteContents)
+		debounceTimerSaveNoteContents = setTimeout(() => {
 			saveNoteContents(id, contents);
 		}, settingsStore.settings.editor.saveDelay);
 	};
@@ -463,10 +470,10 @@ export const useNotesStore = defineStore('notes', () => {
 	const activateRootParent = () => {
 		const parents = getNoteParentsId(current.value.id)
 		if(!parents.length){
-      return
-    }
+			return
+		}
 
-    setCurrent(parents[0])
+		setCurrent(parents[0])
 	}
 
 	// Get parents ID for current note

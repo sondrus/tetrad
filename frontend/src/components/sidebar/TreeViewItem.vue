@@ -3,18 +3,18 @@
   <li>
 
     <div
-      ref="treeViewItem"
+      ref="treeViewItem" :data-id="props.note?.id"
       :title="noteHint"
-      :class="{
+      :class="['item', {
         expanded: isExpanded,
         selected: isSelected,
         empty: isEmpty,
         root: isRoot,
         url: isUrl,
         restricted: isRestricted, // for select parent
-        found_y: isFound, // for search mode
-        found_n: !isFound, // for search mode
-      }"
+        found_y: props.searchMode && isFound, // for search mode
+        found_n: props.searchMode && !isFound, // for search mode
+      }]"
       @mousedown="onMouseDown"
       @contextmenu="onContextMenu"
       @dblclick="onDblClick"
