@@ -32,6 +32,7 @@ import { useNotesStore } from '@/stores/notesStore'
 import { useAboutStore } from '@/stores/aboutStore'
 import { useSettingsStore } from '@/stores/settingsStore'
 import { useHotkeysStore } from '@/stores/hotkeysStore'
+import { useEmojiStore } from '@/stores/emojiStore'
 
 import MainButtons from '@/components/header/MainButtons.vue'
 import NoteTitle from '@/components/header/NoteTitle.vue'
@@ -50,6 +51,7 @@ const notesStore = useNotesStore()
 const aboutStore = useAboutStore()
 const hotkeysStore = useHotkeysStore()
 const settingsStore = useSettingsStore()
+const emojiStore = useEmojiStore()
 
 // Load data at startup
 onBeforeMount(() => {
@@ -58,6 +60,11 @@ onBeforeMount(() => {
   aboutStore.loadData()
   settingsStore.loadSettings()
   hotkeysStore.initHandler()
+
+  // Emoji flags for Windows+Chromium: https://habr.com/ru/companies/ruvds/articles/879938/
+  if(!emojiStore.isFlagEmojiSupported()){
+    document.documentElement.classList.add('fallback_emoji_flags')
+  }
 });
 
 onMounted(() => {

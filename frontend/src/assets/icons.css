@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Twemoji Country Flags';
+  src: url('@/assets/fonts/twemoji-country-flags.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .icon {
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -117,6 +124,15 @@ span.icon {
 .flag:before {
 	font-size: 18px;
 }
+
+.fallback_emoji_flags .flag {
+  font-family: 'Twemoji Country Flags', sans-serif;
+}
+
+.fallback_emoji_flags .flag:before {
+  font-size: 22px;
+}
+
 .flag-ru:before {
 	content: '🇷🇺';
 }

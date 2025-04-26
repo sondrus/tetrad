@@ -73,7 +73,6 @@ const selectNoteHome = (options: SelectOptions) => {
 
 const selectNoteEnd = (options: SelectOptions) => {
   const lastId = getVisibleNotesIds(options).at(-1) ?? 0
-  console.log(lastId)
   if(!lastId){
     return;
   }
