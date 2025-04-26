@@ -38,7 +38,7 @@
             >{{$t('menu.sidebar')}}</button>
           </li>
 
-          <li>
+          <li v-if="settingsStore.isSidebar()">
             <div class="block">
               <div class="block_inner">
 
@@ -177,103 +177,13 @@
             <div class="block">
               <div class="block_inner block_auto">
 
-                <button
-                  @click="settingsStore.settings.language = 'en'"
-                  :class="['flag', 'flag-en', {
-                    selected: settingsStore.settings.language === 'en'
+                <button v-for="lang in availableLocales" :key="lang"
+                  :title="lang.toUpperCase()"
+                  @click="settingsStore.settings.language = lang"
+                  :class="['flag', 'flag-' + lang, {
+                    selected: settingsStore.settings.language === lang
                   }]"
-                >EN</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'ru'"
-                  :class="['flag', 'flag-ru', {
-                    selected: settingsStore.settings.language === 'ru'
-                  }]"
-                >RU</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'cn'"
-                  :class="['flag', 'flag-cn', {
-                    selected: settingsStore.settings.language === 'cn'
-                  }]"
-                >CN</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'hi'"
-                  :class="['flag', 'flag-hi', {
-                    selected: settingsStore.settings.language === 'hi'
-                  }]"
-                >HI</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'es'"
-                  :class="['flag', 'flag-es', {
-                    selected: settingsStore.settings.language === 'es'
-                  }]"
-                >ES</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'eg'"
-                  :class="['flag', 'flag-eg', {
-                    selected: settingsStore.settings.language === 'eg'
-                  }]"
-                >EG</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'jp'"
-                  :class="['flag', 'flag-jp', {
-                    selected: settingsStore.settings.language === 'jp'
-                  }]"
-                >JP</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'ko'"
-                  :class="['flag', 'flag-ko', {
-                    selected: settingsStore.settings.language === 'ko'
-                  }]"
-                >KO</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'bn'"
-                  :class="['flag', 'flag-bn', {
-                    selected: settingsStore.settings.language === 'bn'
-                  }]"
-                >BN</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'br'"
-                  :class="['flag', 'flag-br', {
-                    selected: settingsStore.settings.language === 'br'
-                  }]"
-                >BR</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'it'"
-                  :class="['flag', 'flag-it', {
-                    selected: settingsStore.settings.language === 'it'
-                  }]"
-                >IT</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'fr'"
-                  :class="['flag', 'flag-fr', {
-                    selected: settingsStore.settings.language === 'fr'
-                  }]"
-                >FR</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'de'"
-                  :class="['flag', 'flag-de', {
-                    selected: settingsStore.settings.language === 'de'
-                  }]"
-                >DE</button>
-
-                <button
-                  @click="settingsStore.settings.language = 'tr'"
-                  :class="['flag', 'flag-tr', {
-                    selected: settingsStore.settings.language === 'tr'
-                  }]"
-                >TR</button>
+                >{{lang}}</button>
 
               </div>
             </div>
@@ -310,10 +220,13 @@
 
 <script setup lang="ts">
 import { ref, watch, computed, onMounted, onUnmounted } from 'vue'
+import { useI18n } from 'vue-i18n'
+
 import { useSettingsStore } from '@/stores/settingsStore';
 import { useNotesStore } from '@/stores/notesStore';
 import { useActionsStore } from '@/stores/actionsStore';
 
+const { availableLocales } = useI18n()
 const settingsStore = useSettingsStore();
 const notesStore = useNotesStore();
 const actionsStore = useActionsStore();

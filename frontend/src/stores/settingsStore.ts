@@ -69,7 +69,7 @@ export const useSettingsStore = defineStore('settings', () => {
 
 	//
 	const setLanguage = (language: string) => {
-		i18n.global.locale.value = language as "en" | "bn" | "br" | "cn" | "de" | "eg" | "es" | "fr" | "hi" | "it" | "jp" | "ko" | "ru" | "tr"
+		i18n.global.locale.value = language as "bn" | "br" | "cn" | "de" | "en" | "es" | "fr" | "hi" | "it" | "jp" | "ko" | "ru" | "sa" | "tr"
 	}
 
 	// Change language

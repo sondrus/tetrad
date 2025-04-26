@@ -7,7 +7,7 @@
 	"types.URL": "URL",
 
 	"welcome.loading": "Chargement...",
-	"welcome.title": "Bienvenue sur Tetrad!",
+	"welcome.title": "Bienvenue sur Tetrad !",
 	"welcome.database": "Base de données",
 	"welcome.db_optimize": "Optimiser",
 	"welcome.db_download": "Télécharger",
@@ -15,53 +15,55 @@
 	"welcome.favorite_notes": "Notes favorites",
 	"welcome.last_modified_notes": "Dernières notes modifiées",
 	"welcome.last_added_notes": "Dernières notes ajoutées",
-
+	
 	"menu.add_root": "Ajouter à la racine",
-	"menu.add_near": "Ajouter près",
+	"menu.add_near": "Ajouter à proximité",
 	"menu.add_child": "Ajouter un enfant",
-	"menu.sidebar": "Barre latérale de l'arbre",
+	"menu.sidebar": "Barre latérale de l'arborescence",
 	"menu.treeview_singleline": "Ligne unique",
-	"menu.treeview_multiline": "Multiligne",
+	"menu.treeview_multiline": "Multilignes",
 	"menu.expand_all": "Tout développer",
 	"menu.collapse_all": "Tout réduire",
-	"menu.mode_default": "Par défaut",
-	"menu.mode_vertical": "Vertical",
-	"menu.mode_horizontal": "Horizontal",
-	"menu.viewer": "Afficheur",
+	"menu.mode_default": "Mode par défaut",
+	"menu.mode_vertical": "Mode vertical",
+	"menu.mode_horizontal": "Mode horizontal",
+	"menu.viewer": "Visionneuse",
 	"menu.editor": "Éditeur",
-	"menu.auto_viewer": "Afficheur automatique",
-	"menu.pre_wrap": "Enrouler le code de l'afficheur",
-	"menu.line_wrap": "Enrouler les lignes de l'éditeur",
+	"menu.auto_viewer": "Visionneuse automatique",
+	"menu.pre_wrap": "Retour à la ligne dans la visionneuse",
+	"menu.line_wrap": "Retour à la ligne dans l'éditeur",
 	"menu.reverse_mobile_interface": "Inverser l'interface mobile",
-	"menu.log": "Ouvrir le journal des messages",
+	"menu.emoji": "Choisir un emoji",
+	"menu.log": "Ouvrir le journal",
 	"menu.welcome": "Aller à la page d'accueil",
 	"menu.about": "À propos de Tetrad",
-
-	"toolbar.sidebar": "Basculer la barre latérale",
+	
+	"toolbar.sidebar": "Afficher/Masquer la barre latérale",
 	"toolbar.welcome": "Page d'accueil",
 	"toolbar.add_root": "Ajouter à la racine",
-	"toolbar.add_near": "Ajouter près",
+	"toolbar.add_near": "Ajouter à proximité",
 	"toolbar.add_child": "Ajouter un enfant",
 	"toolbar.edit": "Modifier la note",
 	"toolbar.delete": "Supprimer la note",
-	"toolbar.viewer": "Mode afficheur",
+	"toolbar.viewer": "Mode visionneuse",
 	"toolbar.editor": "Mode éditeur",
-
-	"search.placeholder": "Rechercher dans les notes..",
+	
+	"search.placeholder": "Rechercher dans les notes...",
 	"search.clear": "Effacer la recherche",
 	"search.just_in_titles": "Rechercher uniquement dans les titres",
-	"search.whole_phrases": "Rechercher des phrases entières",
-
+	"search.whole_phrases": "Rechercher des phrases complètes",
+	"search.tree_mode": "Mode arborescence lors de la recherche",
+	
 	"clipboard.copy": "copier",
-	"clipboard.success": "copié!",
-	"clipboard.error": "erreur!",
-
+	"clipboard.success": "copié !",
+	"clipboard.error": "erreur !",
+	
 	"note.delete_confirm": "Supprimer la note [{id}] \"{title}\" ?",
-
+	
 	"popup_log.header": "Messages du journal",
 	"popup_log.btn_clear": "Effacer",
 	"popup_log.clear_confirm": "Effacer tous les messages ?",
-
+	
 	"popup_parent.title": "Sélectionner le parent",
 	"popup_parent.title_placeholder": "Titre de la note",
 	"popup_parent.readonly_y": "Mode lecture seule",
@@ -70,15 +72,25 @@
 	"popup_parent.type": "Type de note",
 	"popup_parent.note_url": "URL de la note (https://...)",
 	"popup_parent.note_syntax": "Syntaxe du code de la note",
-
+	
 	"popup_about.header": "À propos",
 	"popup_about.version": "Version",
-	"popup_about.notes": "Une application simple de prise de notes fonctionnant comme un serveur HTTP, construite avec Go et Vue, où les notes peuvent être de différents types, y compris Markdown, HTML, code avec surlignage de syntaxe, et texte brut.",
-
+	"popup_about.notes": "Une application simple de prise de notes fonctionnant comme un serveur HTTP, construite avec Go et Vue, où les notes peuvent être de différents types, notamment Markdown, HTML, code avec surlignage syntaxique et texte brut.",
+	
 	"popup_license.header": "Texte de la licence",
-
+	
+	"popup_emoji.header": "Choisir un emoji",
+	
 	"button.ok": "OK",
 	"button.cancel": "Annuler",
-
-	"error.loading": "Impossible de charger les notes. Assurez-vous que l'application est en cours d'exécution."
+	
+	"emoji.symbols": "✅ Symboles",
+	"emoji.objects": "📌 Objets",
+	"emoji.time_weather": "🕐 Temps et Météo",
+	"emoji.activities": "🎯 Activités",
+	"emoji.clothing_accessories": "🧥 Vêtements et Accessoires",
+	"emoji.travel_places": "🚀 Voyages et Lieux",
+	"emoji.flags": "🚩 Drapeaux",
+	
+	"error.loading": "Impossible de charger les notes. Vérifiez que l'application est en cours d'exécution."
 }

@@ -2,6 +2,7 @@
 	"types.MD": "Markdown",
 	"types.CODE": "Código",
 	"types.HTML": "HTML",
+	"types.IFRAME": "IFrame",
 	"types.TEXT": "Texto",
 	"types.URL": "URL",
 
@@ -10,53 +11,59 @@
 	"welcome.database": "Banco de dados",
 	"welcome.db_optimize": "Otimizar",
 	"welcome.db_download": "Baixar",
-	"welcome.total_notes": "Total de notas",
+	"welcome.total_notes": "Notas totais",
+	"welcome.favorite_notes": "Notas favoritas",
 	"welcome.last_modified_notes": "Notas modificadas recentemente",
 	"welcome.last_added_notes": "Notas adicionadas recentemente",
 	
 	"menu.add_root": "Adicionar à raiz",
 	"menu.add_near": "Adicionar próximo",
-	"menu.add_child": "Adicionar como filho",
+	"menu.add_child": "Adicionar filho",
 	"menu.sidebar": "Barra lateral da árvore",
-	"menu.treeview_singleline": "Uma linha",
+	"menu.treeview_singleline": "Linha única",
 	"menu.treeview_multiline": "Múltiplas linhas",
 	"menu.expand_all": "Expandir tudo",
 	"menu.collapse_all": "Recolher tudo",
-	"menu.mode_default": "Padrão",
-	"menu.mode_vertical": "Vertical",
-	"menu.mode_horizontal": "Horizontal",
+	"menu.mode_default": "Modo padrão",
+	"menu.mode_vertical": "Modo vertical",
+	"menu.mode_horizontal": "Modo horizontal",
 	"menu.viewer": "Visualizador",
 	"menu.editor": "Editor",
 	"menu.auto_viewer": "Visualizador automático",
-	"menu.line_wrap": "Quebra de linha",
+	"menu.pre_wrap": "Quebrar código no visualizador",
+	"menu.line_wrap": "Quebrar linhas no editor",
 	"menu.reverse_mobile_interface": "Inverter interface móvel",
+	"menu.emoji": "Escolher emoji",
 	"menu.log": "Abrir log de mensagens",
-	"menu.welcome": "Ir para página inicial",
+	"menu.welcome": "Ir para a página inicial",
 	"menu.about": "Sobre o Tetrad",
-
+	
 	"toolbar.sidebar": "Alternar barra lateral",
 	"toolbar.welcome": "Página inicial",
 	"toolbar.add_root": "Adicionar à raiz",
 	"toolbar.add_near": "Adicionar próximo",
-	"toolbar.add_child": "Adicionar como filho",
+	"toolbar.add_child": "Adicionar filho",
 	"toolbar.edit": "Editar nota",
 	"toolbar.delete": "Excluir nota",
 	"toolbar.viewer": "Modo visualizador",
 	"toolbar.editor": "Modo editor",
-
+	
 	"search.placeholder": "Pesquisar nas notas...",
-	"search.clear": "Limpar busca",
+	"search.clear": "Limpar pesquisa",
 	"search.just_in_titles": "Pesquisar apenas nos títulos",
 	"search.whole_phrases": "Pesquisar frases completas",
-
+	"search.tree_mode": "Modo árvore ao pesquisar",
+	
 	"clipboard.copy": "copiar",
 	"clipboard.success": "copiado!",
 	"clipboard.error": "erro!",
-
+	
+	"note.delete_confirm": "Excluir nota [{id}] \"{title}\"?",
+	
 	"popup_log.header": "Mensagens de log",
 	"popup_log.btn_clear": "Limpar",
 	"popup_log.clear_confirm": "Limpar todas as mensagens?",
-
+	
 	"popup_parent.title": "Selecionar pai",
 	"popup_parent.title_placeholder": "Título da nota",
 	"popup_parent.readonly_y": "Modo somente leitura",
@@ -64,9 +71,26 @@
 	"popup_parent.target_root": "--- adicionar à raiz ---",
 	"popup_parent.type": "Tipo de nota",
 	"popup_parent.note_url": "URL da nota (https://...)",
-
+	"popup_parent.note_syntax": "Sintaxe do código da nota",
+	
+	"popup_about.header": "Sobre",
+	"popup_about.version": "Versão",
+	"popup_about.notes": "Um aplicativo simples para anotações, rodando como um servidor HTTP, construído com Go e Vue, onde as notas podem ser de diferentes tipos, incluindo Markdown, HTML, código com destaque de sintaxe e texto simples.",
+	
+	"popup_license.header": "Texto da licença",
+	
+	"popup_emoji.header": "Escolhendo emoji",
+	
 	"button.ok": "OK",
 	"button.cancel": "Cancelar",
-
+	
+	"emoji.symbols": "✅ Símbolos",
+	"emoji.objects": "📌 Objetos",
+	"emoji.time_weather": "🕐 Clima e Tempo",
+	"emoji.activities": "🎯 Atividades",
+	"emoji.clothing_accessories": "🧥 Roupas e Acessórios",
+	"emoji.travel_places": "🚀 Viagens e Lugares",
+	"emoji.flags": "🚩 Bandeiras",
+	
 	"error.loading": "Não foi possível carregar as notas. Verifique se o aplicativo está em execução."
 }

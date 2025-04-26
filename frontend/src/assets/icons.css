@@ -133,45 +133,19 @@ span.icon {
   font-size: 22px;
 }
 
-.flag-ru:before {
-	content: '🇷🇺';
-}
-.flag-en:before {
-	content: '🇺🇸';
-}
-.flag-cn:before {
-	content: '🇨🇳';
-}
-.flag-hi:before {
-	content: '🇮🇳';
-}
-.flag-es:before {
-	content: '🇪🇸';
-}
-.flag-eg:before {
-	content: '🇪🇬';
-}
-.flag-jp:before {
-	content: '🇯🇵';
-}
-.flag-ko:before {
-	content: '🇰🇷';
-}
-.flag-bn:before {
-	content: '🇧🇩';
-}
-.flag-br:before {
-	content: '🇧🇷';
-}
-.flag-it:before {
-	content: '🇮🇹';
-}
-.flag-fr:before {
-	content: '🇫🇷';
-}
-.flag-de:before {
-	content: '🇩🇪';
-}
-.flag-tr:before {
-	content: '🇹🇷';
-}
+.flag-bn:before {content: '🇧🇩';}
+.flag-br:before {content: '🇧🇷';}
+.flag-cn:before {content: '🇨🇳';}
+.flag-de:before {content: '🇩🇪';}
+.flag-en:before {content: '🇺🇸';}
+.flag-es:before {content: '🇪🇸';}
+.flag-fr:before {content: '🇫🇷';}
+.flag-hi:before {content: '🇮🇳';}
+.flag-it:before {content: '🇮🇹';}
+.flag-jp:before {content: '🇯🇵';}
+.flag-ko:before {content: '🇰🇷';}
+.flag-po:before {content: '🇵🇱';}
+.flag-ru:before {content: '🇷🇺';}
+.flag-sa:before {content: '🇸🇦';}
+.flag-tr:before {content: '🇹🇷';}
+.flag-vi:before {content: '🇻🇳';}

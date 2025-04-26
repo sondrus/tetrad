@@ -13,10 +13,13 @@ import App from './App.vue'
 
 const app = createApp(App)
 
+// Plugin: pinia
 app.use(createPinia())
 
+// Plugin: internalization
 app.use(i18n);
 
+// Start app
 app.mount('#tetrad');
 
 // For debug in production
