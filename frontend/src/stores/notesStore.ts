@@ -66,7 +66,7 @@ export const useNotesStore = defineStore('notes', () => {
 	}
 
 	// Set current note
-	const setCurrent = (id: number | undefined) => {
+	const setCurrent = (id: number | undefined, expand: boolean = false) => {
 		// Do not change if already set as current
 		if(id == current.value?.id){ // this interferes select note after save, so move this logic to component
 			return
@@ -99,10 +99,11 @@ export const useNotesStore = defineStore('notes', () => {
 		// Expand parents
 		expandParents(note.id)
 
+		// Expand current note
+		note.expanded = expand
+
 		// Scroll to note
 		scrollToSelected(document.querySelector('nav'))
-
-		const isEditable = checkIsEditable(note)
 
 		// Load contents
 		if(!['URL'].includes(note.type)){
@@ -110,10 +111,11 @@ export const useNotesStore = defineStore('notes', () => {
 		}
 
 		// Auto view (or if not editable): viewer mode
+		const isEditable = checkIsEditable(note)
 		if (settingsStore.settings.editor.autoview || !isEditable) {
 			settingsStore.setEditMode(false)
 		}
-		
+
 	};
 
 	// Set current note to undefined
@@ -135,7 +137,21 @@ export const useNotesStore = defineStore('notes', () => {
 		return parents
 	};
 
-	// Collapse all children
+	// Expand DIRECT children
+	const expandChildren = (id: number) => {
+		const children = getNoteChildren(id)
+		if (!children) {
+			return
+		}
+
+		children.forEach((child) => {
+			child.expanded = true
+		})
+
+		return children
+	};
+
+	// Collapse ALL children
 	const collapseChildren = (id: number) => {
 		const children = getNoteChildren(id)
 		if (!children) {
@@ -224,7 +240,7 @@ export const useNotesStore = defineStore('notes', () => {
 		}
 
 		const responseData = response.json as {note: Note}
-		
+
 		if (typeof responseData.note.contents != 'string') {
 			logStore.error(`Invalid data structure: ${responseData.note.contents}`)
 		}
@@ -241,7 +257,7 @@ export const useNotesStore = defineStore('notes', () => {
 		if (!current.value) {
 			return;
 		}
-		
+
 		const note = notesMap.get(current.value.id)
 		if(!note){
 			return
@@ -254,7 +270,7 @@ export const useNotesStore = defineStore('notes', () => {
 	// Add/edit existent note
 	const saveNote = async (note: SaveNote) => {
 		let id = note.id ?? 0
-		
+
 		const edit = !!id
 		const add = !edit;
 
@@ -437,10 +453,20 @@ export const useNotesStore = defineStore('notes', () => {
 
 	// Collapse all notes
 	const collapseAll = async () => {
-		resetCurrent()
+		activateRootParent();
 		await fetcher('/api/notes/expand', {method: "POST", json: { collapse: [0] }});
 		await loadNotes()
 		scrollToSelected(document.querySelector('nav'))
+	}
+
+	// Activate root item of current note
+	const activateRootParent = () => {
+		const parents = getNoteParentsId(current.value.id)
+		if(!parents.length){
+      return
+    }
+
+    setCurrent(parents[0])
 	}
 
 	// Get parents ID for current note
@@ -482,22 +508,30 @@ export const useNotesStore = defineStore('notes', () => {
 	}
 
 	// Get children ID for current note
-	const getNoteChildrenId = (id: number): number[] => {
+	const getNoteChildrenId = (id: number, recursive: boolean = false): number[] => {
 		const src = notesMap.get(id)
 		if (!src) {
 			return []
 		}
 
+		const filterRecursive = ([, note]: [number, Note]) => {
+			return note.left > src.left && note.right < src.right
+		}
+
+		const filterDirect = ([, note]: [number, Note]) => {
+			return note.parentId === id
+		}
+
 		return Array.from(notesMap)
-			.filter(([, note]) => note.left > src.left && note.right < src.right)
+			.filter(recursive ? filterRecursive : filterDirect)
 			.map(([id]) => id)
 	}
 
 	// Get chidlren for current note
-	const getNoteChildren = (noteId: number): Note[] => {
+	const getNoteChildren = (noteId: number, recursive: boolean = false): Note[] => {
 		const result: Note[] = []
 
-		getNoteChildrenId(noteId).forEach((childId) => {
+		getNoteChildrenId(noteId, recursive).forEach((childId) => {
 			const child = notesMap.get(childId)
 			if (child) {
 				result.push(child)
@@ -604,6 +638,7 @@ export const useNotesStore = defineStore('notes', () => {
 		getLatest,
 
 		expandParents,
+		expandChildren,
 		collapseChildren,
 		expandAll,
 		collapseAll,
@@ -611,6 +646,7 @@ export const useNotesStore = defineStore('notes', () => {
 		deleteNote,
 		deleteCurrentNote,
 
+		activateRootParent,
 		getNoteParentsId,
 		getNoteParents,
 		getNoteChildrenId,
