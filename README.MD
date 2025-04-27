@@ -52,6 +52,16 @@ By default, the application will run on http://localhost:8888.
 You can also download a precompiled binary that runs without any dependencies:  
 [Releases](https://github.com/sondrus/tetrad/releases)
 
+## Run application
+
+You can run the application as usual, for example, by double-clicking the executable on Windows.
+
+The application runs in the background without any system tray icon or other controls. It does not show any UI elements or notifications while running. To access the app, open any browser and navigate to:
+
+[http://localhost:8888](http://localhost:8888)
+
+To stop the application (if need), you can terminate the process using the usual method for your system (e.g., in tasks manager on Windows).
+
 ## Configuration
 
 The following command-line flags are available:
