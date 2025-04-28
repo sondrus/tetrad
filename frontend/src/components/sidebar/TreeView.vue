@@ -22,11 +22,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 import { useSettingsStore } from '@/stores/settingsStore';
 import { useNotesStore } from '@/stores/notesStore'
 import { useSearchStore } from '@/stores/searchStore'
+import { scrollToSelected } from '@/utils/viewport.ts'
 
 import TreeViewItem from './TreeViewItem.vue'
 
@@ -41,6 +42,12 @@ const props = defineProps<{
 }>()
 
 const refNav = ref<HTMLElement>()
+
+if(props.selectMode){
+  watch(() => searchStore.searchResults, () => {
+    scrollToSelected(document.querySelector('nav'))
+  });
+}
 </script>
 
 <style scoped>
