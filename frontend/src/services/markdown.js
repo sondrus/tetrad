@@ -71,6 +71,7 @@ const highlightCode = (code, lang, classname, numbers) => {
 		`<code class="hljs language-${lang}">${highlighted}</code>`+
 		`<button>copy</button>`+
 		`<span>${lang}</span>`+
+    `<textarea style="height:0;opacity:0;position:absolute;left:-9999px;width:0;">${markdownIt.utils.escapeHtml(code)}</textarea>` +
 	`</pre>`;
 }
 

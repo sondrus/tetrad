@@ -1,6 +1,6 @@
 <template>
   <div class="note_viewer">
-    
+
     <iframe ref="refIFrame" :src="iframeSrc"
       v-show="isIFrameVisible"
     ></iframe>
@@ -101,7 +101,7 @@ const renderMarkdown = (markdown: string) => {
 const renderHtml = (html: string) => {
   // Directly set HTML without conversion
   refContainer.value!.innerHTML = html;
-  
+
   // Execute all <script> tags in HTML (always)
   executeScripts(refContainer.value!);
 }
@@ -140,12 +140,12 @@ const copyCodeOnClick = (event: MouseEvent) => {
     return;
   }
 
-  const code = pre.querySelector(':scope > code') as HTMLElement;
-  if(!code){
+  const textarea = pre.querySelector(':scope > textarea') as HTMLInputElement;
+  if(!textarea){
     return;
   }
 
-  copyToClipboard(code.innerText, (success) => {
+  copyToClipboard(textarea.value, (success) => {
     button.innerText = i18n.global.t(`clipboard.${success ? 'success' : 'error'}`);
     button.classList.add('active');
     setTimeout(() => {
