@@ -24,7 +24,7 @@ Tetrad is a minimalistic Markdown note-taking application. Built as a local-firs
 ### Prerequisites
 
 - Go >= 1.24.1
-- npm
+- node >= 20.0.0
 - Android NDK for cross-compiling to android/arm64
 
 ### Build steps
@@ -49,8 +49,10 @@ By default, the application will run on http://localhost:8888.
 
 ### Prebuilt binaries
 
-You can also download a precompiled binary that runs without any dependencies:  
+You can also download a precompiled binary that runs without any dependencies:
 [Releases](https://github.com/sondrus/tetrad/releases)
+
+**Note:** Prebuilt binaries for Windows are only supported on Windows 10 and later.
 
 ## Run application
 
