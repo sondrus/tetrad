@@ -15,7 +15,7 @@
 	"welcome.favorite_notes": "お気に入りノート",
 	"welcome.last_modified_notes": "最終更新ノート",
 	"welcome.last_added_notes": "最終追加ノート",
-	
+
 	"menu.add_root": "ルートに追加",
 	"menu.add_near": "近くに追加",
 	"menu.add_child": "子ノードを追加",
@@ -76,7 +76,7 @@
 	"popup_about.header": "アプリについて",
 	"popup_about.version": "バージョン",
 	"popup_about.notes": "GoとVueで構築されたHTTPサーバーとして動作するシンプルなノートアプリケーション。ノートはMarkdown、HTML、構文ハイライトされたコード、プレーンテキストなど、さまざまなタイプに対応しています。",
-	
+
 	"popup_license.header": "ライセンス文",
 
 	"popup_emoji.header": "絵文字を選択",
@@ -84,13 +84,24 @@
 	"button.ok": "OK",
 	"button.cancel": "キャンセル",
 
-	"emoji.symbols": "✅ シンボル",
+	"emoji.symbols": "✅ 記号",
 	"emoji.objects": "📌 オブジェクト",
-	"emoji.time_weather": "🕐 時間と天気",
-	"emoji.activities": "🎯 活動",
-	"emoji.clothing_accessories": "🧥 衣類とアクセサリー",
-	"emoji.travel_places": "🚀 旅行と場所",
-	"emoji.flags": "🚩 国旗",
+	"emoji.time_weather": "🕐 天気と時間",
+	"emoji.activities": "🎯 アクティビティ",
+	"emoji.clothing": "🧥 衣類とアクセサリー",
+	"emoji.travel": "🚀 旅行と場所",
+	"emoji.flags": "🚩 旗",
+	"emoji.food": "🍔 食べ物と飲み物",
+	"emoji.animals": "🐱 動物と自然",
+	"emoji.smiles": "😊 スマイリーと感情",
+	"emoji.gestures": "✋ ジェスチャーと体の部位",
+	"emoji.people": "🧑 人々とファンタジー",
+	"emoji.pale_emojis": "👋🏻 明るい肌の色",
+	"emoji.cream_white_emojis": "👋🏼 クリームホワイトの肌の色",
+	"emoji.brown_emojis": "👋🏽 茶色の肌の色",
+	"emoji.dark_brown_emojis": "👋🏾 ダークブラウンの肌の色",
+	"emoji.black_emojis": "👋🏿 黒い肌の色",
+	"emoji.non_emoji": "♛ 非絵文字アイテム",
 
 	"error.loading": "ノートを読み込めませんでした。アプリが実行中であることを確認してください。"
 }

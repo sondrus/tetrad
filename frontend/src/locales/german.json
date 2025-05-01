@@ -15,7 +15,7 @@
 	"welcome.favorite_notes": "Favorisierte Notizen",
 	"welcome.last_modified_notes": "Zuletzt bearbeitete Notizen",
 	"welcome.last_added_notes": "Zuletzt hinzugefügte Notizen",
-	
+
 	"menu.add_root": "Zur Wurzel hinzufügen",
 	"menu.add_near": "In der Nähe hinzufügen",
 	"menu.add_child": "Kind hinzufügen",
@@ -37,7 +37,7 @@
 	"menu.log": "Nachrichtenprotokoll öffnen",
 	"menu.welcome": "Zur Startseite",
 	"menu.about": "Über Tetrad",
-	
+
 	"toolbar.sidebar": "Seitenleiste umschalten",
 	"toolbar.welcome": "Startseite",
 	"toolbar.add_root": "Zur Wurzel hinzufügen",
@@ -47,23 +47,23 @@
 	"toolbar.delete": "Notiz löschen",
 	"toolbar.viewer": "Betrachtermodus",
 	"toolbar.editor": "Editormodus",
-	
+
 	"search.placeholder": "In Notizen suchen...",
 	"search.clear": "Suche löschen",
 	"search.just_in_titles": "Nur in Titeln suchen",
 	"search.whole_phrases": "Ganze Phrasen suchen",
 	"search.tree_mode": "Baumansicht bei Suche",
-	
+
 	"clipboard.copy": "kopieren",
 	"clipboard.success": "kopiert!",
 	"clipboard.error": "Fehler!",
-	
+
 	"note.delete_confirm": "Notiz [{id}] \"{title}\" löschen?",
-	
+
 	"popup_log.header": "Protokollnachrichten",
 	"popup_log.btn_clear": "Löschen",
 	"popup_log.clear_confirm": "Alle Nachrichten löschen?",
-	
+
 	"popup_parent.title": "Elternelement auswählen",
 	"popup_parent.title_placeholder": "Notiztitel",
 	"popup_parent.readonly_y": "Nur-Lese-Modus",
@@ -72,25 +72,36 @@
 	"popup_parent.type": "Notiztyp",
 	"popup_parent.note_url": "Notiz-URL (https://...)",
 	"popup_parent.note_syntax": "Notiz-Code-Syntax",
-	
+
 	"popup_about.header": "Über",
 	"popup_about.version": "Version",
 	"popup_about.notes": "Eine einfache Notizanwendung, die als HTTP-Server läuft, gebaut mit Go und Vue, wobei Notizen verschiedene Typen haben können, einschließlich Markdown, HTML, Syntaxhervorhebung für Code und reiner Text.",
-	
+
 	"popup_license.header": "Lizenztext",
-	
+
 	"popup_emoji.header": "Emoji auswählen",
-	
+
 	"button.ok": "OK",
 	"button.cancel": "Abbrechen",
-	
+
 	"emoji.symbols": "✅ Symbole",
 	"emoji.objects": "📌 Objekte",
-	"emoji.time_weather": "🕐 Zeit & Wetter",
+	"emoji.time_weather": "🕐 Wetter & Zeit",
 	"emoji.activities": "🎯 Aktivitäten",
-	"emoji.clothing_accessories": "🧥 Kleidung & Zubehör",
-	"emoji.travel_places": "🚀 Reisen & Orte",
+	"emoji.clothing": "🧥 Kleidung & Accessoires",
+	"emoji.travel": "🚀 Reisen & Orte",
 	"emoji.flags": "🚩 Flaggen",
-	
+	"emoji.food": "🍔 Essen & Trinken",
+	"emoji.animals": "🐱 Tiere & Natur",
+	"emoji.smiles": "😊 Smileys & Emotionen",
+	"emoji.gestures": "✋ Gesten & Körperteile",
+	"emoji.people": "🧑 Menschen & Fantasie",
+	"emoji.pale_emojis": "👋🏻 Heller Hautton",
+	"emoji.cream_white_emojis": "👋🏼 Cremeweißer Hautton",
+	"emoji.brown_emojis": "👋🏽 Brauner Hautton",
+	"emoji.dark_brown_emojis": "👋🏾 Dunkelbrauner Hautton",
+	"emoji.black_emojis": "👋🏿 Schwarzer Hautton",
+	"emoji.non_emoji": "♛ Nicht-Emoji-Elemente",
+
 	"error.loading": "Notizen konnten nicht geladen werden. Stelle sicher, dass die App läuft."
 }

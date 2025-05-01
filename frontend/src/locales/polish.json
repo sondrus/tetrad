@@ -15,7 +15,7 @@
 	"welcome.favorite_notes": "Ulubione notatki",
 	"welcome.last_modified_notes": "Ostatnio zmodyfikowane notatki",
 	"welcome.last_added_notes": "Ostatnio dodane notatki",
-	
+
 	"menu.add_root": "Dodaj do korzenia",
 	"menu.add_near": "Dodaj obok",
 	"menu.add_child": "Dodaj dziecko",
@@ -76,7 +76,7 @@
 	"popup_about.header": "O aplikacji",
 	"popup_about.version": "Wersja",
 	"popup_about.notes": "Prosta aplikacja do robienia notatek działająca jako serwer HTTP, zbudowana z Go i Vue, gdzie notatki mogą być różnych typów, w tym Markdown, HTML, kodu z wyróżnianiem składni i zwykłego tekstu.",
-	
+
 	"popup_license.header": "Tekst licencji",
 
 	"popup_emoji.header": "Wybór emoji",
@@ -86,11 +86,22 @@
 
 	"emoji.symbols": "✅ Symbole",
 	"emoji.objects": "📌 Obiekty",
-	"emoji.time_weather": "🕐 Czas i pogoda",
+	"emoji.time_weather": "🕐 Pogoda i Czas",
 	"emoji.activities": "🎯 Aktywności",
-	"emoji.clothing_accessories": "🧥 Odzież i akcesoria",
-	"emoji.travel_places": "🚀 Podróże i miejsca",
+	"emoji.clothing": "🧥 Odzież i Akcesoria",
+	"emoji.travel": "🚀 Podróże i Miejsca",
 	"emoji.flags": "🚩 Flagi",
+	"emoji.food": "🍔 Jedzenie i Napoje",
+	"emoji.animals": "🐱 Zwierzęta i Natura",
+	"emoji.smiles": "😊 Uśmiechy i Emocje",
+	"emoji.gestures": "✋ Gesty i Części Ciała",
+	"emoji.people": "🧑 Ludzie i Fantazja",
+	"emoji.pale_emojis": "👋🏻 Jasny Odcień Skóry",
+	"emoji.cream_white_emojis": "👋🏼 Kremowy Odcień Skóry",
+	"emoji.brown_emojis": "👋🏽 Brązowy Odcień Skóry",
+	"emoji.dark_brown_emojis": "👋🏾 Ciemnobrązowy Odcień Skóry",
+	"emoji.black_emojis": "👋🏿 Czarny Odcień Skóry",
+	"emoji.non_emoji": "♛ Elementy Nie-Emoji",
 
 	"error.loading": "Nie udało się załadować notatek. Upewnij się, że aplikacja działa."
 }

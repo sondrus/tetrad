@@ -15,7 +15,7 @@
 	"welcome.favorite_notes": "收藏的笔记",
 	"welcome.last_modified_notes": "最近修改的笔记",
 	"welcome.last_added_notes": "最近添加的笔记",
-	
+
 	"menu.add_root": "添加到根目录",
 	"menu.add_near": "附近添加",
 	"menu.add_child": "添加子项",
@@ -37,7 +37,7 @@
 	"menu.log": "打开日志",
 	"menu.welcome": "回到欢迎页面",
 	"menu.about": "关于 Tetrad",
-	
+
 	"toolbar.sidebar": "切换侧栏",
 	"toolbar.welcome": "欢迎页面",
 	"toolbar.add_root": "添加到根目录",
@@ -47,23 +47,23 @@
 	"toolbar.delete": "删除笔记",
 	"toolbar.viewer": "查看器模式",
 	"toolbar.editor": "编辑器模式",
-	
+
 	"search.placeholder": "在笔记中搜索...",
 	"search.clear": "清除搜索",
 	"search.just_in_titles": "仅在标题中搜索",
 	"search.whole_phrases": "完整短语搜索",
 	"search.tree_mode": "搜索时使用树形模式",
-	
+
 	"clipboard.copy": "复制",
 	"clipboard.success": "已复制！",
 	"clipboard.error": "出错了！",
-	
+
 	"note.delete_confirm": "确定要删除笔记 [{id}] \"{title}\"？",
-	
+
 	"popup_log.header": "日志消息",
 	"popup_log.btn_clear": "清除",
 	"popup_log.clear_confirm": "清除所有消息？",
-	
+
 	"popup_parent.title": "选择父节点",
 	"popup_parent.title_placeholder": "笔记标题",
 	"popup_parent.readonly_y": "只读模式",
@@ -72,25 +72,36 @@
 	"popup_parent.type": "笔记类型",
 	"popup_parent.note_url": "笔记网址 (https://...)",
 	"popup_parent.note_syntax": "笔记代码语法",
-	
+
 	"popup_about.header": "关于",
 	"popup_about.version": "版本",
 	"popup_about.notes": "一个简单的笔记应用，作为 HTTP 服务器运行，使用 Go 和 Vue 构建，支持多种笔记类型，包括 Markdown、HTML、高亮代码和纯文本。",
-	
+
 	"popup_license.header": "许可证文本",
-	
+
 	"popup_emoji.header": "选择表情符号",
-	
+
 	"button.ok": "确定",
 	"button.cancel": "取消",
-	
+
 	"emoji.symbols": "✅ 符号",
 	"emoji.objects": "📌 物品",
 	"emoji.time_weather": "🕐 天气与时间",
 	"emoji.activities": "🎯 活动",
-	"emoji.clothing_accessories": "🧥 服饰与配件",
-	"emoji.travel_places": "🚀 旅行与地点",
+	"emoji.clothing": "🧥 服装与配饰",
+	"emoji.travel": "🚀 旅行与地点",
 	"emoji.flags": "🚩 旗帜",
-	
+	"emoji.food": "🍔 食物与饮料",
+	"emoji.animals": "🐱 动物与自然",
+	"emoji.smiles": "😊 表情与情感",
+	"emoji.gestures": "✋ 手势与身体部位",
+	"emoji.people": "🧑 人物与幻想",
+	"emoji.pale_emojis": "👋🏻 浅肤色",
+	"emoji.cream_white_emojis": "👋🏼 米白肤色",
+	"emoji.brown_emojis": "👋🏽 棕色肤色",
+	"emoji.dark_brown_emojis": "👋🏾 深棕肤色",
+	"emoji.black_emojis": "👋🏿 黑色肤色",
+	"emoji.non_emoji": "♛ 非表情符号项",
+
 	"error.loading": "无法加载笔记。请确认应用正在运行。"
 }

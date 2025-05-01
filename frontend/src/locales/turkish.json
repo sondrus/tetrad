@@ -15,7 +15,7 @@
 	"welcome.favorite_notes": "Favori notlar",
 	"welcome.last_modified_notes": "Son düzenlenen notlar",
 	"welcome.last_added_notes": "Son eklenen notlar",
-	
+
 	"menu.add_root": "Kök'e ekle",
 	"menu.add_near": "Yakına ekle",
 	"menu.add_child": "Çocuk ekle",
@@ -76,7 +76,7 @@
 	"popup_about.header": "Hakkında",
 	"popup_about.version": "Sürüm",
 	"popup_about.notes": "Farklı türdeki notların Markdown, HTML, sözdizimi vurgulamalı kod ve düz metin gibi türlerde olabildiği, Go ve Vue ile yapılmış basit bir not alma uygulaması.",
-	
+
 	"popup_license.header": "Lisans metni",
 
 	"popup_emoji.header": "Emoji seçimi",
@@ -86,11 +86,22 @@
 
 	"emoji.symbols": "✅ Semboller",
 	"emoji.objects": "📌 Nesneler",
-	"emoji.time_weather": "🕐 Zaman ve Hava Durumu",
-	"emoji.activities": "🎯 Aktiviteler",
-	"emoji.clothing_accessories": "🧥 Giysiler ve Aksesuarlar",
-	"emoji.travel_places": "🚀 Seyahat ve Yerler",
+	"emoji.time_weather": "🕐 Hava ve Zaman",
+	"emoji.activities": "🎯 Etkinlikler",
+	"emoji.clothing": "🧥 Giysiler ve Aksesuarlar",
+	"emoji.travel": "🚀 Seyahat ve Yerler",
 	"emoji.flags": "🚩 Bayraklar",
+	"emoji.food": "🍔 Yiyecek ve İçecek",
+	"emoji.animals": "🐱 Hayvanlar ve Doğa",
+	"emoji.smiles": "😊 Surat İfadeleri ve Duygular",
+	"emoji.gestures": "✋ Jestler ve Vücut Parçaları",
+	"emoji.people": "🧑 İnsanlar ve Fantazi",
+	"emoji.pale_emojis": "👋🏻 Açık Ten Rengi",
+	"emoji.cream_white_emojis": "👋🏼 Krem Beyaz Ten Rengi",
+	"emoji.brown_emojis": "👋🏽 Kahverengi Ten Rengi",
+	"emoji.dark_brown_emojis": "👋🏾 Koyu Kahverengi Ten Rengi",
+	"emoji.black_emojis": "👋🏿 Siyah Ten Rengi",
+	"emoji.non_emoji": "♛ Emoji Dışı Öğeler",
 
 	"error.loading": "Notlar yüklenemedi. Uygulamanın çalıştığından emin olun."
 }

@@ -76,7 +76,7 @@
 	"popup_about.header": "Giới thiệu",
 	"popup_about.version": "Phiên bản",
 	"popup_about.notes": "Ứng dụng ghi chú đơn giản chạy như một máy chủ HTTP, được xây dựng với Go và Vue, nơi các ghi chú có thể có nhiều loại, bao gồm Markdown, HTML, mã có đánh dấu cú pháp và văn bản thuần túy.",
-	
+
 	"popup_license.header": "Văn bản giấy phép",
 
 	"popup_emoji.header": "Chọn emoji",
@@ -84,13 +84,24 @@
 	"button.ok": "OK",
 	"button.cancel": "Hủy",
 
-	"emoji.symbols": "✅ Biểu tượng",
-	"emoji.objects": "📌 Đối tượng",
-	"emoji.time_weather": "🕐 Thời gian và thời tiết",
+	"emoji.symbols": "✅ Ký hiệu",
+	"emoji.objects": "📌 Đồ vật",
+	"emoji.time_weather": "🕐 Thời tiết và Thời gian",
 	"emoji.activities": "🎯 Hoạt động",
-	"emoji.clothing_accessories": "🧥 Quần áo và phụ kiện",
-	"emoji.travel_places": "🚀 Du lịch và địa điểm",
+	"emoji.clothing": "🧥 Quần áo và Phụ kiện",
+	"emoji.travel": "🚀 Du lịch và Địa điểm",
 	"emoji.flags": "🚩 Cờ",
+	"emoji.food": "🍔 Đồ ăn và Đồ uống",
+	"emoji.animals": "🐱 Động vật và Thiên nhiên",
+	"emoji.smiles": "😊 Cảm xúc và Mặt cười",
+	"emoji.gestures": "✋ Cử chỉ và Bộ phận cơ thể",
+	"emoji.people": "🧑 Con người và Giả tưởng",
+	"emoji.pale_emojis": "👋🏻 Tông da sáng",
+	"emoji.cream_white_emojis": "👋🏼 Tông da trắng kem",
+	"emoji.brown_emojis": "👋🏽 Tông da nâu",
+	"emoji.dark_brown_emojis": "👋🏾 Tông da nâu đậm",
+	"emoji.black_emojis": "👋🏿 Tông da đen",
+	"emoji.non_emoji": "♛ Mục không phải emoji",
 
 	"error.loading": "Không thể tải ghi chú. Hãy chắc chắn rằng ứng dụng đang chạy."
 }

@@ -15,7 +15,7 @@
 	"welcome.favorite_notes": "즐겨찾기 노트",
 	"welcome.last_modified_notes": "마지막 수정된 노트",
 	"welcome.last_added_notes": "마지막 추가된 노트",
-	
+
 	"menu.add_root": "루트에 추가",
 	"menu.add_near": "근처에 추가",
 	"menu.add_child": "자식 추가",
@@ -76,7 +76,7 @@
 	"popup_about.header": "정보",
 	"popup_about.version": "버전",
 	"popup_about.notes": "Markdown, HTML, 구문 강조된 코드 및 일반 텍스트와 같은 다양한 유형의 노트를 작성할 수 있는 Go와 Vue로 구축된 HTTP 서버에서 실행되는 간단한 노트 애플리케이션.",
-	
+
 	"popup_license.header": "라이선스 텍스트",
 
 	"popup_emoji.header": "이모지 선택",
@@ -85,12 +85,23 @@
 	"button.cancel": "취소",
 
 	"emoji.symbols": "✅ 기호",
-	"emoji.objects": "📌 물건",
-	"emoji.time_weather": "🕐 시간 및 날씨",
+	"emoji.objects": "📌 객체",
+	"emoji.time_weather": "🕐 날씨와 시간",
 	"emoji.activities": "🎯 활동",
-	"emoji.clothing_accessories": "🧥 의류 및 액세서리",
-	"emoji.travel_places": "🚀 여행 및 장소",
+	"emoji.clothing": "🧥 의류 및 액세서리",
+	"emoji.travel": "🚀 여행 및 장소",
 	"emoji.flags": "🚩 깃발",
+	"emoji.food": "🍔 음식 및 음료",
+	"emoji.animals": "🐱 동물 및 자연",
+	"emoji.smiles": "😊 스마일 및 감정",
+	"emoji.gestures": "✋ 제스처 및 신체 부위",
+	"emoji.people": "🧑 사람 및 판타지",
+	"emoji.pale_emojis": "👋🏻 연한 피부 톤",
+	"emoji.cream_white_emojis": "👋🏼 크림 화이트 피부 톤",
+	"emoji.brown_emojis": "👋🏽 갈색 피부 톤",
+	"emoji.dark_brown_emojis": "👋🏾 진한 갈색 피부 톤",
+	"emoji.black_emojis": "👋🏿 검은 피부 톤",
+	"emoji.non_emoji": "♛ 이모지가 아닌 항목",
 
 	"error.loading": "노트를 로드할 수 없습니다. 앱이 실행 중인지 확인하세요."
 }

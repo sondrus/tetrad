@@ -120,7 +120,7 @@ dialog {
 .contents > div h4:first-child {
   margin-top: 0;
 }
-.contents > div span {
+.contents > div span:not(.first-letter) {
   border: 1px solid var(--color-panel-border-light);
   cursor: pointer;
   display: inline-block;

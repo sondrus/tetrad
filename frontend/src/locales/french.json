@@ -15,7 +15,7 @@
 	"welcome.favorite_notes": "Notes favorites",
 	"welcome.last_modified_notes": "Dernières notes modifiées",
 	"welcome.last_added_notes": "Dernières notes ajoutées",
-	
+
 	"menu.add_root": "Ajouter à la racine",
 	"menu.add_near": "Ajouter à proximité",
 	"menu.add_child": "Ajouter un enfant",
@@ -37,7 +37,7 @@
 	"menu.log": "Ouvrir le journal",
 	"menu.welcome": "Aller à la page d'accueil",
 	"menu.about": "À propos de Tetrad",
-	
+
 	"toolbar.sidebar": "Afficher/Masquer la barre latérale",
 	"toolbar.welcome": "Page d'accueil",
 	"toolbar.add_root": "Ajouter à la racine",
@@ -47,23 +47,23 @@
 	"toolbar.delete": "Supprimer la note",
 	"toolbar.viewer": "Mode visionneuse",
 	"toolbar.editor": "Mode éditeur",
-	
+
 	"search.placeholder": "Rechercher dans les notes...",
 	"search.clear": "Effacer la recherche",
 	"search.just_in_titles": "Rechercher uniquement dans les titres",
 	"search.whole_phrases": "Rechercher des phrases complètes",
 	"search.tree_mode": "Mode arborescence lors de la recherche",
-	
+
 	"clipboard.copy": "copier",
 	"clipboard.success": "copié !",
 	"clipboard.error": "erreur !",
-	
+
 	"note.delete_confirm": "Supprimer la note [{id}] \"{title}\" ?",
-	
+
 	"popup_log.header": "Messages du journal",
 	"popup_log.btn_clear": "Effacer",
 	"popup_log.clear_confirm": "Effacer tous les messages ?",
-	
+
 	"popup_parent.title": "Sélectionner le parent",
 	"popup_parent.title_placeholder": "Titre de la note",
 	"popup_parent.readonly_y": "Mode lecture seule",
@@ -72,25 +72,36 @@
 	"popup_parent.type": "Type de note",
 	"popup_parent.note_url": "URL de la note (https://...)",
 	"popup_parent.note_syntax": "Syntaxe du code de la note",
-	
+
 	"popup_about.header": "À propos",
 	"popup_about.version": "Version",
 	"popup_about.notes": "Une application simple de prise de notes fonctionnant comme un serveur HTTP, construite avec Go et Vue, où les notes peuvent être de différents types, notamment Markdown, HTML, code avec surlignage syntaxique et texte brut.",
-	
+
 	"popup_license.header": "Texte de la licence",
-	
+
 	"popup_emoji.header": "Choisir un emoji",
-	
+
 	"button.ok": "OK",
 	"button.cancel": "Annuler",
-	
+
 	"emoji.symbols": "✅ Symboles",
 	"emoji.objects": "📌 Objets",
-	"emoji.time_weather": "🕐 Temps et Météo",
+	"emoji.time_weather": "🕐 Météo et Temps",
 	"emoji.activities": "🎯 Activités",
-	"emoji.clothing_accessories": "🧥 Vêtements et Accessoires",
-	"emoji.travel_places": "🚀 Voyages et Lieux",
+	"emoji.clothing": "🧥 Vêtements et Accessoires",
+	"emoji.travel": "🚀 Voyages et Lieux",
 	"emoji.flags": "🚩 Drapeaux",
-	
+	"emoji.food": "🍔 Nourriture et Boissons",
+	"emoji.animals": "🐱 Animaux et Nature",
+	"emoji.smiles": "😊 Émoticônes et Émotions",
+	"emoji.gestures": "✋ Gestes et Parties du Corps",
+	"emoji.people": "🧑 Personnes et Fantaisie",
+	"emoji.pale_emojis": "👋🏻 Teint Clair",
+	"emoji.cream_white_emojis": "👋🏼 Teint Crème",
+	"emoji.brown_emojis": "👋🏽 Teint Marron",
+	"emoji.dark_brown_emojis": "👋🏾 Teint Marron Foncé",
+	"emoji.black_emojis": "👋🏿 Teint Noir",
+	"emoji.non_emoji": "♛ Éléments Non-Emoji",
+
 	"error.loading": "Impossible de charger les notes. Vérifiez que l'application est en cours d'exécution."
 }

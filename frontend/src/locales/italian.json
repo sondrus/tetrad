@@ -15,7 +15,7 @@
 	"welcome.favorite_notes": "Note preferite",
 	"welcome.last_modified_notes": "Ultime note modificate",
 	"welcome.last_added_notes": "Ultime note aggiunte",
-	
+
 	"menu.add_root": "Aggiungi alla radice",
 	"menu.add_near": "Aggiungi vicino",
 	"menu.add_child": "Aggiungi figlio",
@@ -76,7 +76,7 @@
 	"popup_about.header": "Informazioni",
 	"popup_about.version": "Versione",
 	"popup_about.notes": "Un'applicazione semplice per prendere appunti, funzionante come server HTTP, sviluppata con Go e Vue, dove le note possono essere di diversi tipi, inclusi Markdown, HTML, codice con evidenziazione della sintassi e testo semplice.",
-	
+
 	"popup_license.header": "Testo della licenza",
 
 	"popup_emoji.header": "Selezione emoji",
@@ -86,11 +86,22 @@
 
 	"emoji.symbols": "✅ Simboli",
 	"emoji.objects": "📌 Oggetti",
-	"emoji.time_weather": "🕐 Tempo e meteo",
+	"emoji.time_weather": "🕐 Meteo e Tempo",
 	"emoji.activities": "🎯 Attività",
-	"emoji.clothing_accessories": "🧥 Abbigliamento e accessori",
-	"emoji.travel_places": "🚀 Viaggi e luoghi",
+	"emoji.clothing": "🧥 Abbigliamento e Accessori",
+	"emoji.travel": "🚀 Viaggi e Luoghi",
 	"emoji.flags": "🚩 Bandiere",
+	"emoji.food": "🍔 Cibo e Bevande",
+	"emoji.animals": "🐱 Animali e Natura",
+	"emoji.smiles": "😊 Faccine e Emozioni",
+	"emoji.gestures": "✋ Gesti e Parti del Corpo",
+	"emoji.people": "🧑 Persone e Fantasia",
+	"emoji.pale_emojis": "👋🏻 Tono di Pelle Chiaro",
+	"emoji.cream_white_emojis": "👋🏼 Tono di Pelle Crema",
+	"emoji.brown_emojis": "👋🏽 Tono di Pelle Marrone",
+	"emoji.dark_brown_emojis": "👋🏾 Tono di Pelle Marrone Scuro",
+	"emoji.black_emojis": "👋🏿 Tono di Pelle Nera",
+	"emoji.non_emoji": "♛ Elementi Non-Emoji",
 
 	"error.loading": "Impossibile caricare le note. Assicurati che l'app sia in esecuzione."
 }

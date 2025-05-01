@@ -15,7 +15,7 @@
 	"welcome.favorite_notes": "Notas favoritas",
 	"welcome.last_modified_notes": "Notas modificadas recentemente",
 	"welcome.last_added_notes": "Notas adicionadas recentemente",
-	
+
 	"menu.add_root": "Adicionar à raiz",
 	"menu.add_near": "Adicionar próximo",
 	"menu.add_child": "Adicionar filho",
@@ -37,7 +37,7 @@
 	"menu.log": "Abrir log de mensagens",
 	"menu.welcome": "Ir para a página inicial",
 	"menu.about": "Sobre o Tetrad",
-	
+
 	"toolbar.sidebar": "Alternar barra lateral",
 	"toolbar.welcome": "Página inicial",
 	"toolbar.add_root": "Adicionar à raiz",
@@ -47,23 +47,23 @@
 	"toolbar.delete": "Excluir nota",
 	"toolbar.viewer": "Modo visualizador",
 	"toolbar.editor": "Modo editor",
-	
+
 	"search.placeholder": "Pesquisar nas notas...",
 	"search.clear": "Limpar pesquisa",
 	"search.just_in_titles": "Pesquisar apenas nos títulos",
 	"search.whole_phrases": "Pesquisar frases completas",
 	"search.tree_mode": "Modo árvore ao pesquisar",
-	
+
 	"clipboard.copy": "copiar",
 	"clipboard.success": "copiado!",
 	"clipboard.error": "erro!",
-	
+
 	"note.delete_confirm": "Excluir nota [{id}] \"{title}\"?",
-	
+
 	"popup_log.header": "Mensagens de log",
 	"popup_log.btn_clear": "Limpar",
 	"popup_log.clear_confirm": "Limpar todas as mensagens?",
-	
+
 	"popup_parent.title": "Selecionar pai",
 	"popup_parent.title_placeholder": "Título da nota",
 	"popup_parent.readonly_y": "Modo somente leitura",
@@ -72,25 +72,36 @@
 	"popup_parent.type": "Tipo de nota",
 	"popup_parent.note_url": "URL da nota (https://...)",
 	"popup_parent.note_syntax": "Sintaxe do código da nota",
-	
+
 	"popup_about.header": "Sobre",
 	"popup_about.version": "Versão",
 	"popup_about.notes": "Um aplicativo simples para anotações, rodando como um servidor HTTP, construído com Go e Vue, onde as notas podem ser de diferentes tipos, incluindo Markdown, HTML, código com destaque de sintaxe e texto simples.",
-	
+
 	"popup_license.header": "Texto da licença",
-	
+
 	"popup_emoji.header": "Escolhendo emoji",
-	
+
 	"button.ok": "OK",
 	"button.cancel": "Cancelar",
-	
+
 	"emoji.symbols": "✅ Símbolos",
 	"emoji.objects": "📌 Objetos",
 	"emoji.time_weather": "🕐 Clima e Tempo",
 	"emoji.activities": "🎯 Atividades",
-	"emoji.clothing_accessories": "🧥 Roupas e Acessórios",
-	"emoji.travel_places": "🚀 Viagens e Lugares",
+	"emoji.clothing": "🧥 Roupas e Acessórios",
+	"emoji.travel": "🚀 Viagens e Lugares",
 	"emoji.flags": "🚩 Bandeiras",
-	
+	"emoji.food": "🍔 Comida e Bebida",
+	"emoji.animals": "🐱 Animais e Natureza",
+	"emoji.smiles": "😊 Emojis e Emoções",
+	"emoji.gestures": "✋ Gestos e Partes do Corpo",
+	"emoji.people": "🧑 Pessoas e Fantasia",
+	"emoji.pale_emojis": "👋🏻 Tom de Pele Clara",
+	"emoji.cream_white_emojis": "👋🏼 Tom de Pele Creme",
+	"emoji.brown_emojis": "👋🏽 Tom de Pele Marrom",
+	"emoji.dark_brown_emojis": "👋🏾 Tom de Pele Marrom Escuro",
+	"emoji.black_emojis": "👋🏿 Tom de Pele Preta",
+	"emoji.non_emoji": "♛ Itens Não-Emoji",
+
 	"error.loading": "Não foi possível carregar as notas. Verifique se o aplicativo está em execução."
 }
