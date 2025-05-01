@@ -22,16 +22,19 @@ debug: front build start
 run:
 	cd $(BACKEND_DIR) && go run main.go
 
-build: 
+build: version
 	cd $(BACKEND_DIR) && go build -gcflags="all=-N -l" -o $(BUILD_DIR)$(APP).debug main.go
 
 start:
 	cd $(BACKEND_DIR) && $(BUILD_DIR)$(APP).debug --host 0.0.0.0 --port 8888 --database ../demo.db
 
-release: front
+release: version front
 	cd $(BACKEND_DIR) && go build -ldflags="-s -w" -o $(BUILD_DIR)$(APP).release main.go
 	cd $(BACKEND_DIR) && upx -q -q -q --best --lzma $(BUILD_DIR)$(APP).release || true
 	cd $(BACKEND_DIR) && $(BUILD_DIR)$(APP).release
+
+version:
+	@printf "package meta\n\n// Version - Application version\nvar Version = \"%s\"\n" $$(git describe --tags --abbrev=0 | sed 's/^v//') > ./backend/meta/version.go
 
 front:
 	@cd $(FRONTEND_DIR) && find src public index.html package.json vite.config.ts -type f -print0 | sort -z | xargs -0 sha1sum > .build.hash
@@ -52,7 +55,7 @@ deps:
 liveserver:
 	cd $(FRONTEND_DIR) && npm run dev
 
-crossbuild_linux: front
+crossbuild_linux: version front
 	@# 386
 	cd $(BACKEND_DIR) && GOOS=linux GOARCH=386 \
 		go build -ldflags="-s -w" -o ../release/$(APP)_linux_386 main.go && \
@@ -77,7 +80,7 @@ crossbuild_linux: front
 		tar -czf release/$(APP)_$(VERSION)_linux_arm64.tar.gz README.MD LICENSE -C release $(APP)_linux_arm64 && \
 		rm release/$(APP)_linux_arm64
 
-crossbuild_macos: front
+crossbuild_macos: version front
 	@# amd64
 	cd $(BACKEND_DIR) && GOOS=darwin GOARCH=amd64  \
 		go build -ldflags="-s -w" -o ../release/$(APP)_macos_amd64 main.go && \
@@ -92,7 +95,7 @@ crossbuild_macos: front
 		tar -czf release/$(APP)_$(VERSION)_macos_arm64.tar.gz README.MD LICENSE -C release $(APP)_macos_arm64 && \
 		rm release/$(APP)_macos_arm64
 
-crossbuild_windows: front
+crossbuild_windows: version front
 	@# amd64
 	cd $(BACKEND_DIR) && GOOS=windows GOARCH=amd64  CGO_ENABLED=1 CC=x86_64-w64-mingw32-gcc \
 		go build -ldflags="-s -w -H windowsgui" -o ../release/$(APP)_win_amd64.exe main.go && \
@@ -116,7 +119,7 @@ crossbuild_windows: front
 		zip -9 -q -j release/$(APP)_$(VERSION)_win_arm64.zip README.MD LICENSE release/$(APP)_win_arm64.exe && \
 		rm release/$(APP)_win_arm64.exe
 
-crossbuild_android: front
+crossbuild_android: version front
 	@# arm64
 	cd $(BACKEND_DIR) && \
 		export NDK=$(NDK) && \
