@@ -125,15 +125,18 @@ const editorSetContent = (newText: string, noteId: number = 0) => {
   // Get cursor pos
   const cursorPos = noteId === lastNoteId ? editor.state.selection.main.head : 0
 
-  // Set new content and cursor pos
+  // Set new contents
 	editor.dispatch(editor.state.update({
-    // Set new content
 		changes: { from: 0, to: editor.state.doc.length, insert: newText },
-
-   // Set cursor pos (especially relevant for editing)
-    selection: EditorSelection.cursor(cursorPos),
-    scrollIntoView: true
 	}));
+
+  // Set cursor pos when editing
+  if(cursorPos > 0 && cursorPos <= editor.state.doc.length) {
+    editor.dispatch(editor.state.update({
+      selection: EditorSelection.cursor(cursorPos),
+      scrollIntoView: true
+    }));
+  }
 
   // Clear undo history
   if(noteId !== lastNoteId) {

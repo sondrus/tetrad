@@ -95,7 +95,10 @@ export const useNotesStore = defineStore('notes', () => {
 
 		// Activate found note
 		note.selected = true
-		current.value = {...note}
+
+    // Set notesStore.current
+    // `contentsLength: -1` means than empty note (for handle this case in watch())
+		current.value = {...note, contentsLength: -1}
 
 		// Expand parents
 		expandParents(note.id)
@@ -112,8 +115,10 @@ export const useNotesStore = defineStore('notes', () => {
 		if(!['URL'].includes(note.type)){
       const delay = debounce ? 50 : 0
       clearTimeout(debounceTimerSetCurrent)
-      debounceTimerSetCurrent = setTimeout(() => {
-        loadNoteContents(note.id);
+      debounceTimerSetCurrent = setTimeout(async () => {
+        const response = await loadNoteContents(note.id) ?? '';
+        current.value.contentsLength = response.length
+        current.value.contents = response
       }, delay)
 		}
 
@@ -232,7 +237,7 @@ export const useNotesStore = defineStore('notes', () => {
 
 
 	// Load note from database by fetch
-	const loadNoteContents = async (id: number) => {
+	const loadNoteContents = async (id: number): Promise<string | undefined> => {
 		const url = `/api/note/${id}`;
 		const response = await fetcher(url, { method: "GET" });
 
@@ -256,7 +261,7 @@ export const useNotesStore = defineStore('notes', () => {
 			return
 		}
 
-		current.value.contents = responseData.note.contents
+    return responseData.note.contents
 	};
 
 	// Update current note contents (in store)
@@ -271,6 +276,7 @@ export const useNotesStore = defineStore('notes', () => {
 		}
 
 		current.value.contents = contents;
+
 		note.contentsLength = contents.length
 	};
 

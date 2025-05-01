@@ -48,16 +48,16 @@ watch(() => editorContents.value, (contents) => {
     notesStore.saveNoteContentsWithDebounce(notesStore.current.id, contents);
 });
 
-// Auto load editor text at note select
+// Auto load editor text when changed `notesStore.current`
 const lastNoteId = ref<number>(0)
-watch(() => notesStore.current.contents, (contents) => {
-  if(notesStore.current.id === lastNoteId.value){
+watch(() => notesStore.current, (note) => {
+  if(note.contentsLength === -1 || note.id === lastNoteId.value){
     return
   }
 
-  lastNoteId.value = notesStore.current.id
-  editorSetContent(contents, notesStore.current.id);
-});
+  editorSetContent(note.contents, notesStore.current.id);
+  lastNoteId.value = note.id
+}, {deep: true});
 
 // Auto apply options `linewrap`
 watch(() => settingsStore.settings.editor.linewrap, (newValue) => {
