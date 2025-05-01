@@ -15,8 +15,8 @@
             v-for="(emojis, group) in emojiStore.emojiGroups"
           >
             <h4>
-              <span class="first-letter">{{ Array.from($t(`emoji.${group}`))[0] }}</span>
-              {{ Array.from($t(`emoji.${group}`)).slice(1).join('') }}
+              <span class="first-letter">{{ emojiStore.extractFromString($t(`emoji.${group}`), true) }}</span>
+              {{ emojiStore.extractFromString($t(`emoji.${group}`), false) }}
             </h4>
             <span :key="emoji"
               v-for="emoji in emojis"
@@ -101,11 +101,11 @@ const handleEmojiClick = (event: Event) => {
 
 <style scoped>
 dialog {
-  height: 540px;
-  width: 960px;
+  height: 800px;
+  width: 1200px;
 }
 .contents {
-  font-size: 1.5rem;
+  font-size: 2rem;
   user-select: text;
 }
 .contents > div + div{
@@ -121,9 +121,16 @@ dialog {
   margin-top: 0;
 }
 .contents > div span {
+  border: 1px solid var(--color-panel-border-light);
   cursor: pointer;
   display: inline-block;
-  margin: 0 8px 8px 0;
+  line-height: 100%;
+  margin: 2px;
+  overflow: hidden;
+  padding: 4px;
+}
+.contents > div span:hover {
+  border-color: var(--color-panel-border-light-hover);
 }
 .contents > div hr {
   margin: 15px 0;

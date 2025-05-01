@@ -88,9 +88,20 @@
 	"emoji.objects": "📌 Objects",
 	"emoji.time_weather": "🕐 Weather & Time",
 	"emoji.activities": "🎯 Activities",
-	"emoji.clothing_accessories": "🧥 Clothing & Accessories",
-	"emoji.travel_places": "🚀 Travel & Places",
+	"emoji.clothing": "🧥 Clothing & Accessories",
+	"emoji.travel": "🚀 Travel & Places",
 	"emoji.flags": "🚩 Flags",
+	"emoji.food": "🍔 Food & Drink",
+	"emoji.animals": "🐱 Animals & Nature",
+	"emoji.smiles": "😊 Smileys & Emotion",
+	"emoji.gestures": "✋ Gestures & Body Parts",
+	"emoji.people": "🧑 People & Fantasy",
+	"emoji.pale_emojis": "👋🏻 Pale Skin Tone",
+	"emoji.cream_white_emojis": "👋🏼 Cream White Skin Tone",
+	"emoji.brown_emojis": "👋🏽 Brown Skin Tone",
+	"emoji.dark_brown_emojis": "👋🏾 Dark Brown Skin Tone",
+	"emoji.black_emojis": "👋🏿 Black Skin Tone",
+	"emoji.non_emoji": "♛ Non-Emoji Items",
 
 	"error.loading": "Unable to load notes. Make sure the app is running."
 }

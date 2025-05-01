@@ -34,6 +34,8 @@
 	--color-panel-error: var(--tetrad-error-light);
 	--color-panel-border: var(--tetrad-gray);
 	--color-panel-border-hover: var(--tetrad-dimgray);
+	--color-panel-border-light: var(--tetrad-silver);
+	--color-panel-border-light-hover: var(--tetrad-gray);
 
 	--color-text-white: var(--tetrad-white);
 	--color-text-silver: var(--tetrad-silver);
