@@ -48,8 +48,14 @@ watch(() => editorContents.value, (contents) => {
     notesStore.saveNoteContentsWithDebounce(notesStore.current.id, contents);
 });
 
-// Auto load editor text from current note
+// Auto load editor text at note select
+const lastNoteId = ref<number>(0)
 watch(() => notesStore.current.contents, (contents) => {
+  if(notesStore.current.id === lastNoteId.value){
+    return
+  }
+
+  lastNoteId.value = notesStore.current.id
   editorSetContent(contents, notesStore.current.id);
 });
 
