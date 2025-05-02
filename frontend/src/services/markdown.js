@@ -80,6 +80,8 @@ const getHighlightLang = (language) => {
 	language = language.toLowerCase()
 	if (language == 'js') {
 		language = 'javascript'
+	} else if (language == 'ts') {
+		language = 'typescript'
 	} else if (language == 'html') {
 		language = 'xml'
 	} else if (language == 'sh' || language == 'shell') {
